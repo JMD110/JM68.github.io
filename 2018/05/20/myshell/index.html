@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JM68_Blog">
 <meta property="og:description" content="shell概念: shell是一个用C语言编写的程序,他是用户使用Linux的桥梁,它是一种命令语言,同事也是一种编程语言.用户可以通过Shell访问操作系统和内核服务.Linux的Shell种类众多,Bash是大多数Linux系统默认的Shell,所以我以Bash为例学习shell脚本编程. shell变量:变量的命名  命名只能使用,字母/数字/下划线 中间不能有空格 不能使用标点符号 不能与">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-23T11:44:42.568Z">
+<meta property="og:updated_time" content="2018-05-23T11:51:22.371Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shell简介">
 <meta name="twitter:description" content="shell概念: shell是一个用C语言编写的程序,他是用户使用Linux的桥梁,它是一种命令语言,同事也是一种编程语言.用户可以通过Shell访问操作系统和内核服务.Linux的Shell种类众多,Bash是大多数Linux系统默认的Shell,所以我以Bash为例学习shell脚本编程. shell变量:变量的命名  命名只能使用,字母/数字/下划线 中间不能有空格 不能使用标点符号 不能与">
@@ -398,16 +398,9 @@ echo $c
 </code></pre><p>注释:</p>
 <pre><code>-  以#开头的就是注释,会被解释器直接忽略
 </code></pre><hr>
-<h3 id="shell传参"><a href="#shell传参" class="headerlink" title="shell传参"></a>shell传参</h3><table><br><tr><td>参数处理</td><td>说明</td>     </tr><br><tr><td>$# </td><td>    传递到脚本的参数个数</td></tr><br><tr><td>$<em></em></td><td>以一个单字符串显示所有向脚本传递的参数。如”$\“用「”」括起来的情况、以”$1 $2 … $n”的形式输出所有参数。</td></tr><br><tr><td>$$ </td><td>脚本运行的当前进程ID号</td></tr><br><tr><td>$! </td><td>后台运行的最后一个进程的ID号</td></tr><br><tr><td>$@ </td>    <td>与$*相同，但是使用时加引号，并在引号中返回每个参数。如”$@”用「”」括起来的情况、以”$1” “$2” … “$n” 的形式输出所有参数。</td></tr><br><tr><td>$-</td><td>显示Shell使用的当前选项，与set命令功能相同。</td></tr><br><tr><td>$?</td><td>显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。</td></tr><br></table>
+<h3 id="shell传参"><a href="#shell传参" class="headerlink" title="shell传参"></a>shell传参</h3><table><br><tr><td>参数处理</td><td>说明</td>     </tr><br><tr><td>$# </td><td>    传递到脚本的参数个数</td></tr><br><tr><td>$<em></em></td><td>以一个单字符串显示所有向脚本传递的参数。如”$\“用「”」括起来的情况、以”$1 $2 … $n”的形式输出所有参数。</td></tr><br><tr><td>$$ </td><td>脚本运行的当前进程ID号</td></tr><br><tr><td>$! </td><td>后台运行的最后一个进程的ID号</td></tr><br><tr><td>$@ </td>    <td>与$*相同，但是使用时加引号，并在引号中返回每个参数。如”$@”用「”」括起来的情况、以”$1” “$2” … “$n” 的形式输出所有参数。</td></tr><br><tr><td>$-</td><td>显示Shell使用的当前选项，与set命令功能相同。</td></tr><br><tr><td>$?</td><td>显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。</td></tr><br></table><br><em> </em> <em><br>### shell运算符
 
-<hr>
-<h3 id="shell运算符"><a href="#shell运算符" class="headerlink" title="shell运算符"></a>shell运算符</h3><ul>
-<li>由于原生bash不支持简单的数学运算,但是可以通过其他命令实现,例如awk/expr,其中expr最常用,expr是一款表达式计算工具,使用时要用撇号`包起来(撇号就是键盘上1左边的那个),而且需要注意的是它有严格的语法规范,表达式与运算符之间一定要有空格!例如`expr $a + $b`是对的,但是`expr $a+$b`是错误的!</li>
-</ul>
-<ol>
-<li>算数运算符:</li>
-</ol>
-<table><br><tr><br>    <td>运算符</td><br>    <td>说明</td><br>    <td>举例</td><br></tr><br><tr><br>    <td>+</td><br>    <td>加法</td><br>    <td><code>expr $a + $b</code></td><br></tr><br><tr><br>    <td>-</td><br>    <td>减法</td><br>    <td><code>expr $a - $b</code></td><br></tr><br><tr><br>    <td><em></em></td><br>    <td>乘法</td><br>    <td>`expr $a \ $b<code>&lt;/td&gt;
+</em> 由于原生bash不支持简单的数学运算,但是可以通过其他命令实现,例如awk/expr,其中expr最常用,expr是一款表达式计算工具,使用时要用撇号`包起来(撇号就是键盘上1左边的那个),而且需要注意的是它有严格的语法规范,表达式与运算符之间一定要有空格!例如`expr $a + $b`是对的,但是`expr $a+$b`是错误的!<br><br>1. 算数运算符:<br><table><br><tr><br>    <td>运算符</td><br>    <td>说明</td><br>    <td>举例</td><br></tr><br><tr><br>    <td>+</td><br>    <td>加法</td><br>    <td><code>expr $a + $b</code></td><br></tr><br><tr><br>    <td>-</td><br>    <td>减法</td><br>    <td><code>expr $a - $b</code></td><br></tr><br><tr><br>    <td><em></em></td><br>    <td>乘法</td><br>    <td>`expr $a \ $b<code>&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
     &lt;td&gt;/&lt;/td&gt;
@@ -417,13 +410,7 @@ echo $c
 &lt;tr&gt;
     &lt;td&gt;%&lt;/td&gt;
     &lt;td&gt;取余&lt;/td&gt;
-    &lt;td&gt;</code>expr $a % $b`</td><br></tr><br><tr><br>    <td>=</td><br>    <td>赋值</td><br>    <td>a=$b</td><br></tr><br><tr><br>    <td>==</td><br>    <td>相等</td><br>    <td>$a == $b 判断是否相等 相等返回true 不相等返回false</td><br></tr><br><tr><br>    <td>!=</td><br>    <td>不相等</td><br>    <td>$a != $b 相等返回false 不相等返回true</td><br></tr><br></table>
-
-<hr>
-<ol start="2">
-<li>关系运算符<br>关系运算符只支持数字,不支持字符串,除非字符串的值是数字.</li>
-</ol>
-<table><br><tr><br>    <td>运算符</td><br>    <td>说明</td><br></tr><br><tr><br>    <td>-eq</td><br>    <td>检测两个数是否相等,相等返回true</td><br></tr><br><tr><td>-ne</td><br>    <td>检测两个数是否不等于,不等返回true</td><br></tr><br><tr><br>    <td>-gt</td><br>    <td>检测左边的数是否大于右边的,是就返回true</td><br></tr><br><tr><br>    <td>-lt</td><br>    <td>检测左边的数是否小于右边的,是就返回true</td><br></tr><br><tr><br>    <td>-ge</td><br>    <td>检测左边的数是否大于等于右边的,是就返回true</td><br></tr><br><tr><br>    <td>-le</td><br>    <td>检测左边的数是否小于等于右边的,是就返回true</td><br></tr><br></table>
+    &lt;td&gt;</code>expr $a % $b`</td><br></tr><br><tr><br>    <td>=</td><br>    <td>赋值</td><br>    <td>a=$b</td><br></tr><br><tr><br>    <td>==</td><br>    <td>相等</td><br>    <td>$a == $b 判断是否相等 相等返回true 不相等返回false</td><br></tr><br><tr><br>    <td>!=</td><br>    <td>不相等</td><br>    <td>$a != $b 相等返回false 不相等返回true</td><br></tr><br></table><br><em> </em> *<br>2. 关系运算符<br>关系运算符只支持数字,不支持字符串,除非字符串的值是数字.<br><table><br><tr><br>    <td>运算符</td><br>    <td>说明</td><br></tr><br><tr><br>    <td>-eq</td><br>    <td>检测两个数是否相等,相等返回true</td><br></tr><br><tr><td>-ne</td><br>    <td>检测两个数是否不等于,不等返回true</td><br></tr><br><tr><br>    <td>-gt</td><br>    <td>检测左边的数是否大于右边的,是就返回true</td><br></tr><br><tr><br>    <td>-lt</td><br>    <td>检测左边的数是否小于右边的,是就返回true</td><br></tr><br><tr><br>    <td>-ge</td><br>    <td>检测左边的数是否大于等于右边的,是就返回true</td><br></tr><br><tr><br>    <td>-le</td><br>    <td>检测左边的数是否小于等于右边的,是就返回true</td><br></tr><br></table>
 
 <ol start="3">
 <li>布尔运算:</li>
@@ -441,7 +428,7 @@ echo $c
 </li>
 </ol>
 <blockquote>
-<p>=     检测两个字符串是否相等，相等返回 true &lt;br/<br>!=     检测两个字符串是否相等，不相等返回 true &lt;br/<br>-z     检测字符串长度是否为0，为0返回 true <br><br>-n     检测字符串长度是否为0，不为0返回 true <br><br>str 检测字符串是否为空，不为空返回 true 举例 a=’abc’ [$a]返回ture<br></p>
+<p>=     检测两个字符串是否相等，相等返回 true <br><br>!=     检测两个字符串是否相等，不相等返回 true <br><br>-z     检测字符串长度是否为0，为0返回 true <br><br>-n     检测字符串长度是否为0，不为0返回 true <br><br>str 检测字符串是否为空，不为空返回 true 举例 a=’abc’ [$a]返回ture<br></p>
 </blockquote>
 <hr>
 <h3 id="shell命令"><a href="#shell命令" class="headerlink" title="shell命令"></a>shell命令</h3><ol>
@@ -746,7 +733,7 @@ done
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#shell概念"><span class="nav-number">1.</span> <span class="nav-text">shell概念:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell变量"><span class="nav-number">2.</span> <span class="nav-text">shell变量:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变量的分类"><span class="nav-number">2.1.</span> <span class="nav-text">变量的分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特殊变量"><span class="nav-number">2.2.</span> <span class="nav-text">特殊变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shell中常用数据类型"><span class="nav-number">2.3.</span> <span class="nav-text">shell中常用数据类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell传参"><span class="nav-number">3.</span> <span class="nav-text">shell传参</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell运算符"><span class="nav-number">4.</span> <span class="nav-text">shell运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell命令"><span class="nav-number">5.</span> <span class="nav-text">shell命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell-循环与分支"><span class="nav-number">6.</span> <span class="nav-text">shell 循环与分支</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#shell概念"><span class="nav-number">1.</span> <span class="nav-text">shell概念:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell变量"><span class="nav-number">2.</span> <span class="nav-text">shell变量:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变量的分类"><span class="nav-number">2.1.</span> <span class="nav-text">变量的分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特殊变量"><span class="nav-number">2.2.</span> <span class="nav-text">特殊变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shell中常用数据类型"><span class="nav-number">2.3.</span> <span class="nav-text">shell中常用数据类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell传参"><span class="nav-number">3.</span> <span class="nav-text">shell传参</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell命令"><span class="nav-number">4.</span> <span class="nav-text">shell命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell-循环与分支"><span class="nav-number">5.</span> <span class="nav-text">shell 循环与分支</span></a></li></ol></div>
             
 
           </div>
