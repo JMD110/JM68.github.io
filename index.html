@@ -263,6 +263,245 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/22/git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JM68">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JM68_Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/22/git/" itemprop="url">Django/Flask简介</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-22T20:12:46+08:00">
+                2018-05-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令:"></a>git常用命令:</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">git clone ‘远端克隆地址’</td>
+<td style="text-align:center">将仓库克隆并创建链接到本地</td>
+</tr>
+<tr>
+<td style="text-align:center">git checkout -b ‘分支名’</td>
+<td style="text-align:center">创建并进入分支</td>
+</tr>
+<tr>
+<td style="text-align:center">git checkout ‘分支名’</td>
+<td style="text-align:center">进入分支</td>
+</tr>
+<tr>
+<td style="text-align:center">git status</td>
+<td style="text-align:center">查看修改文件状态</td>
+</tr>
+<tr>
+<td style="text-align:center">git add ‘文件名’</td>
+<td style="text-align:center">添加要上传的文件</td>
+</tr>
+<tr>
+<td style="text-align:center">git add .</td>
+<td style="text-align:center">添加所有文件</td>
+</tr>
+<tr>
+<td style="text-align:center">git commit -m ‘说明’</td>
+<td style="text-align:center">提交并添加文件说明</td>
+</tr>
+<tr>
+<td style="text-align:center">git push origin ‘分支名’</td>
+<td style="text-align:center">提交文件到远端的分支中</td>
+</tr>
+<tr>
+<td style="text-align:center">git pull origin ‘分支名’</td>
+<td style="text-align:center">如果远端修改了文件二本地并未更新,需pull从远端先把本地更新了才能push到远端分支</td>
+</tr>
+<tr>
+<td style="text-align:center">git merge ‘分支名’</td>
+<td style="text-align:center">将你当前所在分支与’分支名’分支进行融合</td>
+</tr>
+<tr>
+<td style="text-align:center">git stash</td>
+<td style="text-align:center">缓存更改</td>
+</tr>
+<tr>
+<td style="text-align:center">git stash list</td>
+<td style="text-align:center">查看缓存片段</td>
+</tr>
+<tr>
+<td style="text-align:center">git stash apply stash@{0}</td>
+<td style="text-align:center">还原缓存代码</td>
+</tr>
+<tr>
+<td style="text-align:center">git log</td>
+<td style="text-align:center">查看提交的日志</td>
+</tr>
+<tr>
+<td style="text-align:center">git -a ‘版本号’ -m ‘说明’</td>
+<td style="text-align:center">提交上线版本标签及说明</td>
+</tr>
+<tr>
+<td style="text-align:center">git push origin ‘标签名’</td>
+<td style="text-align:center">将上线版本push到远端</td>
+</tr>
+<tr>
+<td style="text-align:center">git show commit-id</td>
+<td style="text-align:center">查看某次提交的内容</td>
+</tr>
+<tr>
+<td style="text-align:center">git reset –hard</td>
+<td style="text-align:center">退回到以前的版本</td>
+</tr>
+<tr>
+<td style="text-align:center">git branch -D ‘分支名’</td>
+<td style="text-align:center">删除该分支</td>
+</tr>
+<tr>
+<td style="text-align:center">git push origin –delete ‘分支名’</td>
+<td style="text-align:center">删除远端分支</td>
+</tr>
+<tr>
+<td style="text-align:center">git push origin –delete tag ‘版本号’</td>
+<td style="text-align:center">删除远端上线版本</td>
+</tr>
+<tr>
+<td style="text-align:center">git diff ‘分支名’ ‘分支名’</td>
+<td style="text-align:center">看两个分支间的差异</td>
+</tr>
+</tbody>
+</table>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/20/Django-Flask简介-md/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -868,7 +1107,7 @@ done
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -879,7 +1118,7 @@ done
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -890,7 +1129,7 @@ done
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

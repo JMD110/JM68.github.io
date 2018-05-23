@@ -2,6 +2,17 @@
 <search>
   <entry>
     <title><![CDATA[Django/Flask简介]]></title>
+    <url>%2F2018%2F05%2F22%2Fgit%2F</url>
+    <content type="text"><![CDATA[git常用命令: 命令 说明 git clone ‘远端克隆地址’ 将仓库克隆并创建链接到本地 git checkout -b ‘分支名’ 创建并进入分支 git checkout ‘分支名’ 进入分支 git status 查看修改文件状态 git add ‘文件名’ 添加要上传的文件 git add . 添加所有文件 git commit -m ‘说明’ 提交并添加文件说明 git push origin ‘分支名’ 提交文件到远端的分支中 git pull origin ‘分支名’ 如果远端修改了文件二本地并未更新,需pull从远端先把本地更新了才能push到远端分支 git merge ‘分支名’ 将你当前所在分支与’分支名’分支进行融合 git stash 缓存更改 git stash list 查看缓存片段 git stash apply stash@{0} 还原缓存代码 git log 查看提交的日志 git -a ‘版本号’ -m ‘说明’ 提交上线版本标签及说明 git push origin ‘标签名’ 将上线版本push到远端 git show commit-id 查看某次提交的内容 git reset –hard 退回到以前的版本 git branch -D ‘分支名’ 删除该分支 git push origin –delete ‘分支名’ 删除远端分支 git push origin –delete tag ‘版本号’ 删除远端上线版本 git diff ‘分支名’ ‘分支名’ 看两个分支间的差异]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Django/Flask简介]]></title>
     <url>%2F2018%2F05%2F20%2FDjango-Flask%E7%AE%80%E4%BB%8B-md%2F</url>
     <content type="text"><![CDATA[Python网络框架网络框架指一组python包,它能够让开发者更加专注于网站应用业务逻辑的开发,而无须处理网络应用层的协议、线程、进程等方面，从而提高开发者的工作效率以及网络应用程序的质量。目前Python语言的十几个开发框架中,几乎所有的全栈网络框架都强制或引导开发者使用MVC架构开发Web应用.Python的四种主流框架为:Django/Flask/Tornado/Twisted此篇博文围绕Django/Flask讲解各自特点以及主要应用. MVC: MVC–M(Model):封装与应用程序相关的业务逻辑的数据及对数据的处理方法,是处理数据逻辑的部分.Model提供功能性接口,通过接口访问数据; MVC–V(View):负责数据的显示和呈现,View是对用户的直接输出; MVC–C(Controller):从用户端收集用户的输入,可以看作View的反向功能,Controller将用户作出的改变返回给Model,由Model在返回给View,Model作为数据中心,从而提高数据的一致性; ORM(Object-Relational Mapping 对象关系映射):是在关系型数据库和业务实体对象之间的映射,即开发者对对象与属性进行操作,而不用再去写复杂的sql语句,ORM必须具备三方面功能: 映射技术: 数据类型映射 类映射 关系映射 CRUD操作:(ORM将这些调用转换为SQL语句,通过引擎发送给数据库执行,将结果记录并转换为对象) create增加 Retrieve读取 Upadate更新 Delete删除 缓存优化:由于数据库的操作通常比较耗时,所以大多数ORM提供数据缓存优化的功能 DjangoDjango发布于2003年,是当前最成熟完整最广泛以及最富盛名的Python网络框架.Django定义了服务发布;路由映射;模板编程;数据处理的一整套功能.遵循MVC架构. 优点: 各模块之间结合紧密; 功能强大而相对封闭; 完整的在线文档及健全的开发社区; 具备自带优秀的ORM; 强大的URL映射技术; 后台管理系统自动生成; 用户多,第三方库丰富; 成熟稳定完善,适合企业级网站开发 缺点: 由于自带的丰富功能造成的冗余/耦合程度较高; 可能相对较重,比如开发小应用时,可能会不够灵活/自由; FlaskFlask发布于2010年,它吸收了其他框架的优点并且把自己的主要领域定义在微小项目上.作为微框架,安装时不会自动安装ORM数据组件等其他组件,所以开发者需要自行安装需要的组件. 优点: 内置开发服务器和调试器:Flask默认处于调试状态,运行时会将错误返回给控制台以及HTTP客户端; 与Python单元测试功能无缝连接:测试程序可以模拟进行HTTP访问的客户端来调用Flask路由处理函数,并且获取函数的输出来进行自定义的验证; 使用Jinja2模板,强大程度略高于Django的自带模板; 完全兼容WSGI 1.0 标准; 给予Unicode编码; 完美适合小型网站; 第三方库同样丰富; 开发灵活程度高,入门简单; 缺点: 很多东西需要从头构建; 用的第三方插件可能要踩的坑较多;]]></content>
       <categories>
