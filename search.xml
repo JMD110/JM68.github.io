@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[正则表达式]]></title>
+    <url>%2F2018%2F05%2F26%2F%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[正则表达式又称规则表达式，英语：Regular Expression，在代码中常简写为regex\regexp\RE,作为计算机科学的一个概念，正则表达式通常被用来检索、替换那些符合某个规则的文本，是对字符串进行操作的一种逻辑公式。1、可以使用正则表达式来识别文档中的特定文本，完全删除该文本或者用其他文本替换它。2、 基于模式匹配从字符串中提取子字符串。3、可以查找文档内或输入域内特定的文本。 符号 解释 示例 说明 . 匹配任意字符 b.t 可以匹配bat / but / b#t / b1t等 \w 匹配字母/数字/下划线 b\wt 可以匹配bat / b1t / b_t等但不能匹配b#t \s 匹配空白字符（包括\r、\n、\t等） love\syou 可以匹配love you \d 匹配数字 \d\d 可以匹配01 / 23 / 99等 \b 匹配单词的边界 \bThe\b 可以匹配The ^ 匹配字符串的开始 ^The 可以匹配The开头的字符串 $ 匹配字符串的结束 .exe$ 可以匹配.exe结尾的字符串 \W 匹配非字母/数字/下划线 b\Wt 可以匹配b#t / b@t等,但不能匹配but / b1t / b_t等 \S 匹配非空白字符 love\Syou 可以匹配love#you等,但不能匹配love you \D 匹配非数字 \d\D 可以匹配9a / 3# / 0F等 \B 匹配非单词边界 \Bio\B [] 匹配来自字符集的任意单一字符 [aeiou] 可以匹配任一元音字母字符 [^] 匹配不在字符集中的任意单一字符 [^aeiou] 可以匹配任一非元音字母字符 * 匹配0次或多次 \w* + 匹配1次或多次 \w+ ? 匹配0次或1次 \w? {N} 匹配N次 \w{3} 可以匹配aaa,abc,cba {M,} 匹配至少M次 \w{3,} 可以匹配aaaaa,abduns {M,N} 匹配至少M次至多N次 \w{3,6} \ 分支 foo\ bar 可以匹配foo或者bar (?#) 注释 (exp) 匹配exp并捕获到自动命名的组中 (?exp) 匹配exp并捕获到名为name的组中 (?:exp) 匹配exp但是不捕获匹配的文本 (?=exp) 匹配exp前面的位置 \b\w+(?=ing) 可以匹配I’m dancing中的danc (?&lt;=exp) 匹配exp后面的位置 (?&lt;=\bdanc)\w+\b 可以匹配I love dancing and reading中的第一个ing (?!exp) 匹配后面不是exp的位置 *? 重复任意次，但尽可能少重复 +? 重复1次或多次，但尽可能少重复 ?? 重复0次或1次，但尽可能少重复 {M,N}? 重复M到N次，但尽可能少重复 {M,}? 重复M次以上，但尽可能少重复]]></content>
+      <categories>
+        <category>re</category>
+      </categories>
+      <tags>
+        <tag>re</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux系统下的Python安装]]></title>
+    <url>%2F2018%2F05%2F25%2FLinux%E4%B8%8B%E5%AE%89%E8%A3%85Python%2F</url>
+    <content type="text"><![CDATA[Linux系统下的Python安装：在Linux系统中一般默认已经安装有python的2.X 版本，进入系统后，在输入执行：python 退出按Ctrl+z如下图所示，我的Centos7中装有Python 2.7.5版本。 我主要介绍的是Python3.X版本的安装，以及如何配置环境变量。 源文件安装过程：在python官网中的download找到你需要的python版本，https://www.python.org/ 这是官网地址；我需要的是Python 3.6.5 版本，找到如下图所示的位置，前两个就是你需要的Linux系统下的安装包； 如选择XZ的压缩文件，点击右键复制链接地址；然后回到你的Linux系统，注意是否在你的用户目录下，不然下载后容易将系统弄乱而不自知，回到自己的用户目录用 cd ~然后输入执行 wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz (或粘贴你复制的链接地址)下载完成后 输入 ll 回车 看是否已经有了Python-3.6.5.tar.xz的压缩文件 然后执行如下图一、二行所示命令，解压你的python3.6.5然后再次输入 ll 回车 看是否已经有了Python-3.6.5的文件夹，输入第四行命令，进入文件夹。 然后先安装依赖文件：输入执行 yum -y install zlib*依次输入： ./configure –prefix=/usr/local/python3.6 –enable-optimizationsmake &amp;&amp; make install 安装python3.6;现在你已经安装完成接下来配置环境变量，我用的是创建软链接的方式（有点类似于windows系统中的创建快捷方式）依次执行下图命令，这样你的python3与pip3的环境变量便配置完成 cd ~ 回到你的主目录，输入执行python3 看看你的python3是否安装好了？退出按Ctrl+z]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python--多线程]]></title>
+    <url>%2F2018%2F05%2F25%2FPython%E5%A4%9A%E7%BA%BF%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[多线程类似于同时执行多个不同程序，多线程运行有如下优点：1、使用线程可以把占据长时间的程序中的任务放到后台去处理。2、用户界面可以更加吸引人，这样比如用户点击了一个按钮去触发某些事件的处理，可以弹出一个进度条来显示处理的进度程序的运行速度可能加快3、在一些等待的任务实现上如用户输入、文件读写和网络收发数据等，线程就比较有用了。在这种情况下我们可以释放一些珍贵的资源如内存占用等等。4、线程在执行过程中与进程还是有区别的。每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口。但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制。每个线程都有他自己的一组CPU寄存器，称为线程的上下文，该上下文反映了线程上次运行该线程的CPU寄存器的状态。指令指针和堆栈指针寄存器是线程上下文中两个最重要的寄存器，线程总是在进程得到上下文中运行的，这些地址都用于标志拥有线程的进程地址空间中的内存。线程可以被抢占（中断）。在其他线程正在运行时，线程可以暂时搁置（也称为睡眠） – 这就是线程的退让。Python中使用线程有两种方式：函数或者用类来包装线程对象。下面我以两个简单的示例来解释这两种方式：模拟用多线程下载文件，用的是函数的方法： 1234567891011121314151617181920212223242526from random import randintfrom threading import Threadfrom time import time, sleepdef download(filename): print('开始下载%s...' % filename) time_to_download = randint(5, 10) sleep(time_to_download) print('%s下载完成! 用时%d秒' % (filename, time_to_download))def main(): start = time() # 开始的时间点 t1 = Thread(target=download, args=('A文件',)) # 注意字符串后面的逗号，表示传入的是元组 t1.start() # 启动下载A文件的线程 t2 = Thread(target=download, args=('B文件',)) t2.start() t1.join() # 等待执行结束 t2.join() # 等待执行结束 end = time() # 结束的时间点 print('总共耗费了%.5f秒' % (end - start))if __name__ == '__main__': main() 用多线程写的赛车动画，五个线程控制五辆由色块表示的小车移动，这样小车可以同时移动，而不是一辆一辆依次移动 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687import pygamefrom random import uniform, randintfrom threading import Threadclass Car(object): def __init__(self, x, y): self._color = [randint(0, 255), randint(0, 255), randint(0, 255)] self._x = x self._y = y @property def x(self): return self._x def move(self): self._x += uniform(0.5, 3) def head(self): return self._x + 20 def draw(self, screen): pygame.draw.rect(screen, self._color, (self._x, self._y, 20, 20), 0) def run(self, screen): self.move() self.draw(screen)class Mythread(Thread): def __init__(self, car, screen): super().__init__() self._car = car self._screen = screen def run(self): Car.move(self._car) Car.draw(self._car, self._screen)def main(): pygame.init() screen = pygame.display.set_mode([600, 500]) pygame.display.set_caption('赛车游戏') screen.fill([255, 255, 255]) pygame.draw.line(screen, [0, 0, 0], (37, 0), (37, 500), 5) pygame.draw.line(screen, [255, 0, 0], (580, 0), (580, 500), 5) cars = [] for i in range(5): car = Car(20, 50+100*i) cars.append(car) for car in cars: car.draw(screen) pygame.display.flip() running = True gameover = False def game_over(c1): nonlocal gameover if c1.head() &gt; 580: gameover = True def refresh(): screen.fill((255, 255, 255)) pygame.draw.line(screen, [0, 0, 0], (37, 0), (37, 500), 5) pygame.draw.line(screen, [255, 0, 0], (580, 0), (580, 500), 5) for _ in cars: Mythread(_, screen).start() pygame.display.flip() while running: for event in pygame.event.get(): if event.type == pygame.QUIT: running = False if event.type == pygame.KEYDOWN: while not gameover: for car in cars: game_over(car) refresh() pygame.display.flip() pygame.quit()if __name__ == '__main__': main()]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python字符串]]></title>
+    <url>%2F2018%2F05%2F24%2FPyhon%E5%AD%97%E7%AC%A6%E4%B8%B2%2F</url>
+    <content type="text"><![CDATA[Python中的字符串类型的常用方法在字符串中查找索引方法包括： .index()、.rindex、.find()、.rfind() 方法中可以规定查找的具体起点索引位置，终点索引位置find 与 rfind 的区别一个从左向右找，一个从右到左找，它们都只返回第一个查找到的位置 同理 index与rindexfind 与 index 的区别在于，如果在字符串中没有查找到目标字符串，find将会返回整型 -1 而index将报出ValueError的错误 123456789text = 'abba'print(text.index('a')) print(text.rindex('a'))print(text.index('a',1))print(text.find('a'))print(text.find('a',1))print(text.rfind('a'))print(text.find('c'))print(text.index('c')) 0 3 3 0 3 3 -1 --------------------------------------------------------------------------- ValueError Traceback (most recent call last) &lt;ipython-input-4-4bb2a984ce9c&gt; in &lt;module&gt;() 7 print(text.rfind(&apos;a&apos;)) 8 print(text.find(&apos;c&apos;)) ----&gt; 9 print(text.index(&apos;c&apos;)) ValueError: substring not found 在字符串中插入字符串.join() 插入间隔字符串，将字符串一一隔开.format() 在字符串中加入{}然后用.format( )在括号内依次插入在字符串中加入%s 代表字符串 %d 代表数字 后用 % 连接你要插入的 123456a = ' ' # 包含一个空格的字符串b = '面朝大海春暖花开'print(b)print(a.join(b))print('挑水&#123;&#125;柴周&#123;&#125;世界'.format('劈','游'))print('%d个和尚挑%s,%d个和尚%s' % (1,'水喝',2,'没水喝')) 面朝大海春暖花开 面 朝 大 海 春 暖 花 开 挑水劈柴周游世界 1个和尚挑水喝,2个和尚没水喝 在字符串中判断（此处不谈正则表达式）.isalnum()判断是否由字母与数字构成.isalpha()判断是否由字母构成.isdigit()判断是否是数字构成.islower()判断是否全是小写字母.isupper()判断是否全是大写字母.endswith()以什么结束.startswith()以什么开始 1234567print('abc123'.isalnum()) # 判断是否由字母与数字构成print('abc123'.isalpha()) # 判断是否由字母构成print('123'.isdigit()) # 判断是否是数字构成print('abc'.islower()) # 判断是否全是小写字母print('abc'.isupper()) # 判断是否全是大写字母print('abc'.endswith('c')) # 以什么结束print('abc'.startswith('a')) # 以什么开始 True False True True False True True 将字符串拆分成列表.split() 12text = '姓名，年龄，学历，简历' # 注意我用的汉语输入法中的逗号print(text.split('，')) [&apos;姓名&apos;, &apos;年龄&apos;, &apos;学历&apos;, &apos;简历&apos;] 将字符串中的字符替换.replace() 将原来的字符串替换为新的字符串.capitalize() 将原来的字符串首字母进行大写处理 同理 .title().upper() 全部转换为大写字母.lower() 全部转换为小写字母 1234print('I want to work'.replace('work','sleep'))print('i want to work'.capitalize())print('i want to work'.upper())print('I wAnt to work'.lower()) I want to sleep I want to work I WANT TO WORK i want to work]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[git常用命令]]></title>
     <url>%2F2018%2F05%2F22%2Fgit%2F</url>
     <content type="text"><![CDATA[git常用命令: 命令 说明 git clone ‘远端克隆地址’ 将仓库克隆并创建链接到本地 git checkout -b ‘分支名’ 创建并进入分支 git checkout ‘分支名’ 进入分支 git status 查看修改文件状态 git add ‘文件名’ 添加要上传的文件 git add . 添加所有文件 git commit -m ‘说明’ 提交并添加文件说明 git push origin ‘分支名’ 提交文件到远端的分支中 git pull origin ‘分支名’ 如果远端修改了文件二本地并未更新,需pull从远端先把本地更新了才能push到远端分支 git merge ‘分支名’ 将你当前所在分支与’分支名’分支进行融合 git stash 缓存更改 git stash list 查看缓存片段 git stash apply stash@{0} 还原缓存代码 git log 查看提交的日志 git -a ‘版本号’ -m ‘说明’ 提交上线版本标签及说明 git push origin ‘标签名’ 将上线版本push到远端 git show commit-id 查看某次提交的内容 git reset –hard 退回到以前的版本 git branch -D ‘分支名’ 删除该分支 git push origin –delete ‘分支名’ 删除远端分支 git push origin –delete tag ‘版本号’ 删除远端上线版本 git diff ‘分支名’ ‘分支名’ 看两个分支间的差异]]></content>
@@ -22,10 +68,10 @@
         <category>Python</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>Web</tag>
         <tag>Django</tag>
         <tag>Flask</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
 </search>

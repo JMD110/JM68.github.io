@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Git," />
+  <meta name="keywords" content="Python," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="git常用命令:   命令 说明     git clone ‘远端克隆地址’ 将仓库克隆并创建链接到本地   git checkout -b ‘分支名’ 创建并进入分支   git checkout ‘分支名’ 进入分支   git status 查看修改文件状态   git add ‘文件名’ 添加要上传的文件   git add . 添加所有文件   git commit -m ‘说明’ 提">
-<meta name="keywords" content="Git">
+<meta name="description" content="Python中的字符串类型的常用方法在字符串中查找索引方法包括： .index()、.rindex、.find()、.rfind()   方法中可以规定查找的具体起点索引位置，终点索引位置find 与 rfind 的区别一个从左向右找，一个从右到左找，它们都只返回第一个查找到的位置 同理 index与rindexfind 与 index 的区别在于，如果在字符串中没有查找到目标字符串，find将会">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git常用命令">
-<meta property="og:url" content="http://yoursite.com/2018/05/22/git/index.html">
+<meta property="og:title" content="Python字符串">
+<meta property="og:url" content="http://yoursite.com/2018/05/24/Pyhon字符串/index.html">
 <meta property="og:site_name" content="JM68_Blog">
-<meta property="og:description" content="git常用命令:   命令 说明     git clone ‘远端克隆地址’ 将仓库克隆并创建链接到本地   git checkout -b ‘分支名’ 创建并进入分支   git checkout ‘分支名’ 进入分支   git status 查看修改文件状态   git add ‘文件名’ 添加要上传的文件   git add . 添加所有文件   git commit -m ‘说明’ 提">
+<meta property="og:description" content="Python中的字符串类型的常用方法在字符串中查找索引方法包括： .index()、.rindex、.find()、.rfind()   方法中可以规定查找的具体起点索引位置，终点索引位置find 与 rfind 的区别一个从左向右找，一个从右到左找，它们都只返回第一个查找到的位置 同理 index与rindexfind 与 index 的区别在于，如果在字符串中没有查找到目标字符串，find将会">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-23T11:56:07.653Z">
+<meta property="og:updated_time" content="2018-05-30T11:02:37.864Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git常用命令">
-<meta name="twitter:description" content="git常用命令:   命令 说明     git clone ‘远端克隆地址’ 将仓库克隆并创建链接到本地   git checkout -b ‘分支名’ 创建并进入分支   git checkout ‘分支名’ 进入分支   git status 查看修改文件状态   git add ‘文件名’ 添加要上传的文件   git add . 添加所有文件   git commit -m ‘说明’ 提">
+<meta name="twitter:title" content="Python字符串">
+<meta name="twitter:description" content="Python中的字符串类型的常用方法在字符串中查找索引方法包括： .index()、.rindex、.find()、.rfind()   方法中可以规定查找的具体起点索引位置，终点索引位置find 与 rfind 的区别一个从左向右找，一个从右到左找，它们都只返回第一个查找到的位置 同理 index与rindexfind 与 index 的区别在于，如果在字符串中没有查找到目标字符串，find将会">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/22/git/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/24/Pyhon字符串/"/>
 
 
 
 
 
-  <title>git常用命令 | JM68_Blog</title>
+  <title>Python字符串 | JM68_Blog</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/22/git/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/24/Pyhon字符串/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JM68">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git常用命令</h1>
+          <h1 class="post-title" itemprop="name headline">Python字符串</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-22T20:12:46+08:00">
-                2018-05-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-24T08:12:46+08:00">
+                2018-05-24
               </time>
             
 
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -352,105 +352,54 @@
       
 
       
-        <h4 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令:"></a>git常用命令:</h4><table>
-<thead>
-<tr>
-<th style="text-align:center">命令</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">git clone ‘远端克隆地址’</td>
-<td style="text-align:center">将仓库克隆并创建链接到本地</td>
-</tr>
-<tr>
-<td style="text-align:center">git checkout -b ‘分支名’</td>
-<td style="text-align:center">创建并进入分支</td>
-</tr>
-<tr>
-<td style="text-align:center">git checkout ‘分支名’</td>
-<td style="text-align:center">进入分支</td>
-</tr>
-<tr>
-<td style="text-align:center">git status</td>
-<td style="text-align:center">查看修改文件状态</td>
-</tr>
-<tr>
-<td style="text-align:center">git add ‘文件名’</td>
-<td style="text-align:center">添加要上传的文件</td>
-</tr>
-<tr>
-<td style="text-align:center">git add .</td>
-<td style="text-align:center">添加所有文件</td>
-</tr>
-<tr>
-<td style="text-align:center">git commit -m ‘说明’</td>
-<td style="text-align:center">提交并添加文件说明</td>
-</tr>
-<tr>
-<td style="text-align:center">git push origin ‘分支名’</td>
-<td style="text-align:center">提交文件到远端的分支中</td>
-</tr>
-<tr>
-<td style="text-align:center">git pull origin ‘分支名’</td>
-<td style="text-align:center">如果远端修改了文件二本地并未更新,需pull从远端先把本地更新了才能push到远端分支</td>
-</tr>
-<tr>
-<td style="text-align:center">git merge ‘分支名’</td>
-<td style="text-align:center">将你当前所在分支与’分支名’分支进行融合</td>
-</tr>
-<tr>
-<td style="text-align:center">git stash</td>
-<td style="text-align:center">缓存更改</td>
-</tr>
-<tr>
-<td style="text-align:center">git stash list</td>
-<td style="text-align:center">查看缓存片段</td>
-</tr>
-<tr>
-<td style="text-align:center">git stash apply stash@{0}</td>
-<td style="text-align:center">还原缓存代码</td>
-</tr>
-<tr>
-<td style="text-align:center">git log</td>
-<td style="text-align:center">查看提交的日志</td>
-</tr>
-<tr>
-<td style="text-align:center">git -a ‘版本号’ -m ‘说明’</td>
-<td style="text-align:center">提交上线版本标签及说明</td>
-</tr>
-<tr>
-<td style="text-align:center">git push origin ‘标签名’</td>
-<td style="text-align:center">将上线版本push到远端</td>
-</tr>
-<tr>
-<td style="text-align:center">git show commit-id</td>
-<td style="text-align:center">查看某次提交的内容</td>
-</tr>
-<tr>
-<td style="text-align:center">git reset –hard</td>
-<td style="text-align:center">退回到以前的版本</td>
-</tr>
-<tr>
-<td style="text-align:center">git branch -D ‘分支名’</td>
-<td style="text-align:center">删除该分支</td>
-</tr>
-<tr>
-<td style="text-align:center">git push origin –delete ‘分支名’</td>
-<td style="text-align:center">删除远端分支</td>
-</tr>
-<tr>
-<td style="text-align:center">git push origin –delete tag ‘版本号’</td>
-<td style="text-align:center">删除远端上线版本</td>
-</tr>
-<tr>
-<td style="text-align:center">git diff ‘分支名’ ‘分支名’</td>
-<td style="text-align:center">看两个分支间的差异</td>
-</tr>
-</tbody>
-</table>
+        <h2 id="Python中的字符串类型的常用方法"><a href="#Python中的字符串类型的常用方法" class="headerlink" title="Python中的字符串类型的常用方法"></a>Python中的字符串类型的常用方法</h2><h3 id="在字符串中查找索引"><a href="#在字符串中查找索引" class="headerlink" title="在字符串中查找索引"></a>在字符串中查找索引</h3><p>方法包括： .index()、.rindex、.find()、.rfind()   方法中可以规定查找的具体起点索引位置，终点索引位置<br>find 与 rfind 的区别一个从左向右找，一个从右到左找，它们都只返回第一个查找到的位置 同理 index与rindex<br>find 与 index 的区别在于，如果在字符串中没有查找到目标字符串，find将会返回整型 -1 而index将报出ValueError的错误</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">text = <span class="string">'abba'</span></span><br><span class="line">print(text.index(<span class="string">'a'</span>))   </span><br><span class="line">print(text.rindex(<span class="string">'a'</span>))</span><br><span class="line">print(text.index(<span class="string">'a'</span>,<span class="number">1</span>))</span><br><span class="line">print(text.find(<span class="string">'a'</span>))</span><br><span class="line">print(text.find(<span class="string">'a'</span>,<span class="number">1</span>))</span><br><span class="line">print(text.rfind(<span class="string">'a'</span>))</span><br><span class="line">print(text.find(<span class="string">'c'</span>))</span><br><span class="line">print(text.index(<span class="string">'c'</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>0
+3
+3
+0
+3
+3
+-1
 
+
+
+---------------------------------------------------------------------------
+
+ValueError                                Traceback (most recent call last)
+
+&lt;ipython-input-4-4bb2a984ce9c&gt; in &lt;module&gt;()
+      7 print(text.rfind(&apos;a&apos;))
+      8 print(text.find(&apos;c&apos;))
+----&gt; 9 print(text.index(&apos;c&apos;))
+
+
+ValueError: substring not found
+</code></pre><h3 id="在字符串中插入字符串"><a href="#在字符串中插入字符串" class="headerlink" title="在字符串中插入字符串"></a>在字符串中插入字符串</h3><p>.join() 插入间隔字符串，将字符串一一隔开<br>.format()   在字符串中加入{}然后用.format( )在括号内依次插入<br>在字符串中加入%s 代表字符串 %d 代表数字 后用 % 连接你要插入的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">' '</span>    <span class="comment"># 包含一个空格的字符串</span></span><br><span class="line">b = <span class="string">'面朝大海春暖花开'</span></span><br><span class="line">print(b)</span><br><span class="line">print(a.join(b))</span><br><span class="line">print(<span class="string">'挑水&#123;&#125;柴周&#123;&#125;世界'</span>.format(<span class="string">'劈'</span>,<span class="string">'游'</span>))</span><br><span class="line">print(<span class="string">'%d个和尚挑%s,%d个和尚%s'</span> % (<span class="number">1</span>,<span class="string">'水喝'</span>,<span class="number">2</span>,<span class="string">'没水喝'</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>面朝大海春暖花开
+面 朝 大 海 春 暖 花 开
+挑水劈柴周游世界
+1个和尚挑水喝,2个和尚没水喝
+</code></pre><h3 id="在字符串中判断（此处不谈正则表达式）"><a href="#在字符串中判断（此处不谈正则表达式）" class="headerlink" title="在字符串中判断（此处不谈正则表达式）"></a>在字符串中判断（此处不谈正则表达式）</h3><p>.isalnum()判断是否由字母与数字构成<br>.isalpha()判断是否由字母构成<br>.isdigit()判断是否是数字构成<br>.islower()判断是否全是小写字母<br>.isupper()判断是否全是大写字母<br>.endswith()以什么结束<br>.startswith()以什么开始</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'abc123'</span>.isalnum()) <span class="comment"># 判断是否由字母与数字构成</span></span><br><span class="line">print(<span class="string">'abc123'</span>.isalpha()) <span class="comment"># 判断是否由字母构成</span></span><br><span class="line">print(<span class="string">'123'</span>.isdigit()) <span class="comment"># 判断是否是数字构成</span></span><br><span class="line">print(<span class="string">'abc'</span>.islower()) <span class="comment"># 判断是否全是小写字母</span></span><br><span class="line">print(<span class="string">'abc'</span>.isupper()) <span class="comment"># 判断是否全是大写字母</span></span><br><span class="line">print(<span class="string">'abc'</span>.endswith(<span class="string">'c'</span>)) <span class="comment"># 以什么结束</span></span><br><span class="line">print(<span class="string">'abc'</span>.startswith(<span class="string">'a'</span>)) <span class="comment"># 以什么开始</span></span><br></pre></td></tr></table></figure>
+<pre><code>True
+False
+True
+True
+False
+True
+True
+</code></pre><h3 id="将字符串拆分成列表"><a href="#将字符串拆分成列表" class="headerlink" title="将字符串拆分成列表"></a>将字符串拆分成列表</h3><p>.split() </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">text = <span class="string">'姓名，年龄，学历，简历'</span>  <span class="comment"># 注意我用的汉语输入法中的逗号</span></span><br><span class="line">print(text.split(<span class="string">'，'</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;姓名&apos;, &apos;年龄&apos;, &apos;学历&apos;, &apos;简历&apos;]
+</code></pre><h3 id="将字符串中的字符替换"><a href="#将字符串中的字符替换" class="headerlink" title="将字符串中的字符替换"></a>将字符串中的字符替换</h3><p>.replace()  将原来的字符串替换为新的字符串<br>.capitalize() 将原来的字符串首字母进行大写处理 同理 .title()<br>.upper() 全部转换为大写字母<br>.lower() 全部转换为小写字母</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'I want to work'</span>.replace(<span class="string">'work'</span>,<span class="string">'sleep'</span>))</span><br><span class="line">print(<span class="string">'i want to work'</span>.capitalize())</span><br><span class="line">print(<span class="string">'i want to work'</span>.upper())</span><br><span class="line">print(<span class="string">'I wAnt to work'</span>.lower())</span><br></pre></td></tr></table></figure>
+<pre><code>I want to sleep
+I want to work
+I WANT TO WORK
+i want to work
+</code></pre>
       
     </div>
     
@@ -467,7 +416,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Git/" rel="tag"># Git</a>
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
         </div>
       
@@ -480,8 +429,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/20/Django-Flask简介-md/" rel="next" title="Django/Flask简介">
-                <i class="fa fa-chevron-left"></i> Django/Flask简介
+              <a href="/2018/05/22/git/" rel="next" title="git常用命令">
+                <i class="fa fa-chevron-left"></i> git常用命令
               </a>
             
           </div>
@@ -490,8 +439,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/24/Pyhon字符串/" rel="prev" title="Python字符串">
-                Python字符串 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/25/Python多线程/" rel="prev" title="Python--多线程">
+                Python--多线程 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -640,7 +589,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#git常用命令"><span class="nav-number">1.</span> <span class="nav-text">git常用命令:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python中的字符串类型的常用方法"><span class="nav-number">1.</span> <span class="nav-text">Python中的字符串类型的常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在字符串中查找索引"><span class="nav-number">1.1.</span> <span class="nav-text">在字符串中查找索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在字符串中插入字符串"><span class="nav-number">1.2.</span> <span class="nav-text">在字符串中插入字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在字符串中判断（此处不谈正则表达式）"><span class="nav-number">1.3.</span> <span class="nav-text">在字符串中判断（此处不谈正则表达式）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将字符串拆分成列表"><span class="nav-number">1.4.</span> <span class="nav-text">将字符串拆分成列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将字符串中的字符替换"><span class="nav-number">1.5.</span> <span class="nav-text">将字符串中的字符替换</span></a></li></ol></li></ol></div>
             
 
           </div>

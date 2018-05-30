@@ -263,6 +263,845 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/26/正则表达式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JM68">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JM68_Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/26/正则表达式/" itemprop="url">正则表达式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-26T20:12:46+08:00">
+                2018-05-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/re/" itemprop="url" rel="index">
+                    <span itemprop="name">re</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="正则表达式又称规则表达式，英语：Regular-Expression，在代码中常简写为regex-regexp-RE-作为计算机科学的一个概念，正则表达式通常被用来检索、替换那些符合某个规则的文本，是对字符串进行操作的一种逻辑公式。"><a href="#正则表达式又称规则表达式，英语：Regular-Expression，在代码中常简写为regex-regexp-RE-作为计算机科学的一个概念，正则表达式通常被用来检索、替换那些符合某个规则的文本，是对字符串进行操作的一种逻辑公式。" class="headerlink" title="正则表达式又称规则表达式，英语：Regular Expression，在代码中常简写为regex\regexp\RE,作为计算机科学的一个概念，正则表达式通常被用来检索、替换那些符合某个规则的文本，是对字符串进行操作的一种逻辑公式。"></a>正则表达式又称规则表达式，英语：Regular Expression，在代码中常简写为regex\regexp\RE,作为计算机科学的一个概念，正则表达式通常被用来检索、替换那些符合某个规则的文本，是对字符串进行操作的一种逻辑公式。</h4><p>1、可以使用正则表达式来识别文档中的特定文本，完全删除该文本或者用其他文本替换它。<br>2、 基于模式匹配从字符串中提取子字符串。<br>3、可以查找文档内或输入域内特定的文本。</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th style="text-align:right">解释</th>
+<th style="text-align:center">示例</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.</td>
+<td style="text-align:right">匹配任意字符</td>
+<td style="text-align:center">b.t</td>
+<td style="text-align:center">可以匹配bat / but / b#t / b1t等</td>
+</tr>
+<tr>
+<td>\w</td>
+<td style="text-align:right">匹配字母/数字/下划线</td>
+<td style="text-align:center">b\wt</td>
+<td style="text-align:center">可以匹配bat / b1t / b_t等但不能匹配b#t</td>
+</tr>
+<tr>
+<td>\s</td>
+<td style="text-align:right">匹配空白字符（包括\r、\n、\t等）</td>
+<td style="text-align:center">love\syou</td>
+<td style="text-align:center">可以匹配love you</td>
+</tr>
+<tr>
+<td>\d</td>
+<td style="text-align:right">匹配数字</td>
+<td style="text-align:center">\d\d</td>
+<td style="text-align:center">可以匹配01 / 23 / 99等</td>
+</tr>
+<tr>
+<td>\b</td>
+<td style="text-align:right">匹配单词的边界</td>
+<td style="text-align:center">\bThe\b</td>
+<td style="text-align:center">可以匹配The    </td>
+</tr>
+<tr>
+<td>^</td>
+<td style="text-align:right">匹配字符串的开始</td>
+<td style="text-align:center">^The</td>
+<td style="text-align:center">可以匹配The开头的字符串</td>
+</tr>
+<tr>
+<td>$</td>
+<td style="text-align:right">匹配字符串的结束</td>
+<td style="text-align:center">.exe$</td>
+<td style="text-align:center">可以匹配.exe结尾的字符串</td>
+</tr>
+<tr>
+<td>\W</td>
+<td style="text-align:right">匹配非字母/数字/下划线</td>
+<td style="text-align:center">b\Wt</td>
+<td style="text-align:center">可以匹配b#t / b@t等,但不能匹配but / b1t / b_t等</td>
+</tr>
+<tr>
+<td>\S</td>
+<td style="text-align:right">匹配非空白字符</td>
+<td style="text-align:center">love\Syou</td>
+<td style="text-align:center">可以匹配love#you等,但不能匹配love you</td>
+</tr>
+<tr>
+<td>\D</td>
+<td style="text-align:right">匹配非数字</td>
+<td style="text-align:center">\d\D</td>
+<td style="text-align:center">可以匹配9a / 3# / 0F等</td>
+</tr>
+<tr>
+<td>\B</td>
+<td style="text-align:right">匹配非单词边界</td>
+<td style="text-align:center">\Bio\B</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>[]</td>
+<td style="text-align:right">匹配来自字符集的任意单一字符</td>
+<td style="text-align:center">[aeiou]</td>
+<td style="text-align:center">可以匹配任一元音字母字符</td>
+</tr>
+<tr>
+<td>[^]</td>
+<td style="text-align:right">匹配不在字符集中的任意单一字符</td>
+<td style="text-align:center">[^aeiou]</td>
+<td style="text-align:center">可以匹配任一非元音字母字符</td>
+</tr>
+<tr>
+<td>*</td>
+<td style="text-align:right">匹配0次或多次</td>
+<td style="text-align:center">\w*</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>+</td>
+<td style="text-align:right">匹配1次或多次</td>
+<td style="text-align:center">\w+</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>?</td>
+<td style="text-align:right">匹配0次或1次</td>
+<td style="text-align:center">\w?</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>{N}</td>
+<td style="text-align:right">匹配N次</td>
+<td style="text-align:center">\w{3}</td>
+<td style="text-align:center">可以匹配aaa,abc,cba</td>
+</tr>
+<tr>
+<td>{M,}</td>
+<td style="text-align:right">匹配至少M次</td>
+<td style="text-align:center">\w{3,}</td>
+<td style="text-align:center">可以匹配aaaaa,abduns</td>
+</tr>
+<tr>
+<td>{M,N}</td>
+<td style="text-align:right">匹配至少M次至多N次</td>
+<td style="text-align:center">\w{3,6}</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>\</td>
+<td style="text-align:right"></td>
+<td style="text-align:center">分支</td>
+<td style="text-align:center">foo\</td>
+<td>bar</td>
+<td>可以匹配foo或者bar</td>
+</tr>
+<tr>
+<td>(?#)</td>
+<td style="text-align:right">注释</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>(exp)</td>
+<td style="text-align:right">匹配exp并捕获到自动命名的组中</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>(?<name>exp)</name></td>
+<td style="text-align:right">匹配exp并捕获到名为name的组中</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>(?:exp)</td>
+<td style="text-align:right">匹配exp但是不捕获匹配的文本</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>(?=exp)</td>
+<td style="text-align:right">匹配exp前面的位置</td>
+<td style="text-align:center">\b\w+(?=ing)</td>
+<td style="text-align:center">可以匹配I’m dancing中的danc</td>
+</tr>
+<tr>
+<td>(?&lt;=exp)</td>
+<td style="text-align:right">匹配exp后面的位置</td>
+<td style="text-align:center">(?&lt;=\bdanc)\w+\b</td>
+<td style="text-align:center">可以匹配I love dancing and reading中的第一个ing</td>
+</tr>
+<tr>
+<td>(?!exp)</td>
+<td style="text-align:right">匹配后面不是exp的位置</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>*?</td>
+<td style="text-align:right">重复任意次，但尽可能少重复</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>+?</td>
+<td style="text-align:right">重复1次或多次，但尽可能少重复</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>??</td>
+<td style="text-align:right">重复0次或1次，但尽可能少重复</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>{M,N}?</td>
+<td style="text-align:right">重复M到N次，但尽可能少重复</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>{M,}?</td>
+<td style="text-align:right">重复M次以上，但尽可能少重复</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/25/Linux下安装Python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JM68">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JM68_Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/25/Linux下安装Python/" itemprop="url">Linux系统下的Python安装</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-25T20:12:46+08:00">
+                2018-05-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Linux系统下的Python安装："><a href="#Linux系统下的Python安装：" class="headerlink" title="Linux系统下的Python安装："></a>Linux系统下的Python安装：</h3><p>在Linux系统中一般默认已经安装有python的2.X 版本，进入系统后，在输入执行：python 退出按Ctrl+z<br>如下图所示，我的Centos7中装有Python 2.7.5版本。<br><img src="https://upload-images.jianshu.io/upload_images/10915849-8acd7c4b7d57e696.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="js1.PNG"></p>
+<p>我主要介绍的是Python3.X版本的安装，以及如何配置环境变量。</p>
+<h3 id="源文件安装过程："><a href="#源文件安装过程：" class="headerlink" title="源文件安装过程："></a>源文件安装过程：</h3><p>在python官网中的download找到你需要的python版本，<a href="https://www.python.org/" target="_blank" rel="noopener">https://www.python.org/</a> 这是官网地址；<br>我需要的是Python 3.6.5 版本，找到如下图所示的位置，前两个就是你需要的Linux系统下的安装包；<br><img src="https://upload-images.jianshu.io/upload_images/10915849-0cd048ef4171c204.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="js3.PNG"></p>
+<p>如选择XZ的压缩文件，点击右键复制链接地址；<br>然后回到你的Linux系统，注意是否在你的用户目录下，不然下载后容易将系统弄乱而不自知，回到自己的用户目录用 cd ~<br>然后输入执行 wget <a href="https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz" target="_blank" rel="noopener">https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz</a> (或粘贴你复制的链接地址)<br>下载完成后 输入 ll 回车 看是否已经有了Python-3.6.5.tar.xz的压缩文件<br><img src="https://upload-images.jianshu.io/upload_images/10915849-844c8bdbf0c6bee7.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="js4.PNG"></p>
+<p>然后执行如下图一、二行所示命令，解压你的python3.6.5然后再次输入 ll 回车 看是否已经有了Python-3.6.5的文件夹，输入第四行命令，进入文件夹。<br><img src="https://upload-images.jianshu.io/upload_images/10915849-6b98fc809b051f3a.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="js5.PNG"></p>
+<p>然后先安装依赖文件：输入执行 yum -y install zlib*<br>依次输入：  ./configure –prefix=/usr/local/python3.6 –enable-optimizations<br>make &amp;&amp; make install  安装python3.6;<br>现在你已经安装完成<br>接下来配置环境变量，我用的是创建软链接的方式（有点类似于windows系统中的创建快捷方式）<br>依次执行下图命令，这样你的python3与pip3的环境变量便配置完成<br><img src="https://upload-images.jianshu.io/upload_images/10915849-d2d205d56ff36038.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="j7-1.PNG"><br><img src="https://upload-images.jianshu.io/upload_images/10915849-e630d3f790307132.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="j7-2.PNG"></p>
+<p>cd ~ 回到你的主目录，输入执行python3 看看你的python3是否安装好了？退出按Ctrl+z<br><img src="https://upload-images.jianshu.io/upload_images/10915849-d3dbe631aa35c23f.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="js8.PNG"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/25/Python多线程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JM68">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JM68_Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/25/Python多线程/" itemprop="url">Python--多线程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-25T20:12:46+08:00">
+                2018-05-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="多线程类似于同时执行多个不同程序，多线程运行有如下优点："><a href="#多线程类似于同时执行多个不同程序，多线程运行有如下优点：" class="headerlink" title="多线程类似于同时执行多个不同程序，多线程运行有如下优点："></a>多线程类似于同时执行多个不同程序，多线程运行有如下优点：</h4><h4 id="1、使用线程可以把占据长时间的程序中的任务放到后台去处理。"><a href="#1、使用线程可以把占据长时间的程序中的任务放到后台去处理。" class="headerlink" title="1、使用线程可以把占据长时间的程序中的任务放到后台去处理。"></a>1、使用线程可以把占据长时间的程序中的任务放到后台去处理。</h4><h4 id="2、用户界面可以更加吸引人，这样比如用户点击了一个按钮去触发某些事件的处理，可以弹出一个进度条来显示处理的进度程序的运行速度可能加快"><a href="#2、用户界面可以更加吸引人，这样比如用户点击了一个按钮去触发某些事件的处理，可以弹出一个进度条来显示处理的进度程序的运行速度可能加快" class="headerlink" title="2、用户界面可以更加吸引人，这样比如用户点击了一个按钮去触发某些事件的处理，可以弹出一个进度条来显示处理的进度程序的运行速度可能加快"></a>2、用户界面可以更加吸引人，这样比如用户点击了一个按钮去触发某些事件的处理，可以弹出一个进度条来显示处理的进度程序的运行速度可能加快</h4><h4 id="3、在一些等待的任务实现上如用户输入、文件读写和网络收发数据等，线程就比较有用了。在这种情况下我们可以释放一些珍贵的资源如内存占用等等。"><a href="#3、在一些等待的任务实现上如用户输入、文件读写和网络收发数据等，线程就比较有用了。在这种情况下我们可以释放一些珍贵的资源如内存占用等等。" class="headerlink" title="3、在一些等待的任务实现上如用户输入、文件读写和网络收发数据等，线程就比较有用了。在这种情况下我们可以释放一些珍贵的资源如内存占用等等。"></a>3、在一些等待的任务实现上如用户输入、文件读写和网络收发数据等，线程就比较有用了。在这种情况下我们可以释放一些珍贵的资源如内存占用等等。</h4><h4 id="4、线程在执行过程中与进程还是有区别的。每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口。但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制。"><a href="#4、线程在执行过程中与进程还是有区别的。每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口。但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制。" class="headerlink" title="4、线程在执行过程中与进程还是有区别的。每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口。但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制。"></a>4、线程在执行过程中与进程还是有区别的。每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口。但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制。</h4><h4 id="每个线程都有他自己的一组CPU寄存器，称为线程的上下文，该上下文反映了线程上次运行该线程的CPU寄存器的状态。"><a href="#每个线程都有他自己的一组CPU寄存器，称为线程的上下文，该上下文反映了线程上次运行该线程的CPU寄存器的状态。" class="headerlink" title="每个线程都有他自己的一组CPU寄存器，称为线程的上下文，该上下文反映了线程上次运行该线程的CPU寄存器的状态。"></a>每个线程都有他自己的一组CPU寄存器，称为线程的上下文，该上下文反映了线程上次运行该线程的CPU寄存器的状态。</h4><h4 id="指令指针和堆栈指针寄存器是线程上下文中两个最重要的寄存器，线程总是在进程得到上下文中运行的，这些地址都用于标志拥有线程的进程地址空间中的内存。"><a href="#指令指针和堆栈指针寄存器是线程上下文中两个最重要的寄存器，线程总是在进程得到上下文中运行的，这些地址都用于标志拥有线程的进程地址空间中的内存。" class="headerlink" title="指令指针和堆栈指针寄存器是线程上下文中两个最重要的寄存器，线程总是在进程得到上下文中运行的，这些地址都用于标志拥有线程的进程地址空间中的内存。"></a>指令指针和堆栈指针寄存器是线程上下文中两个最重要的寄存器，线程总是在进程得到上下文中运行的，这些地址都用于标志拥有线程的进程地址空间中的内存。</h4><h4 id="线程可以被抢占（中断）。在其他线程正在运行时，线程可以暂时搁置（也称为睡眠）-–-这就是线程的退让。"><a href="#线程可以被抢占（中断）。在其他线程正在运行时，线程可以暂时搁置（也称为睡眠）-–-这就是线程的退让。" class="headerlink" title="线程可以被抢占（中断）。在其他线程正在运行时，线程可以暂时搁置（也称为睡眠） – 这就是线程的退让。"></a>线程可以被抢占（中断）。在其他线程正在运行时，线程可以暂时搁置（也称为睡眠） – 这就是线程的退让。</h4><h4 id="Python中使用线程有两种方式：函数或者用类来包装线程对象。"><a href="#Python中使用线程有两种方式：函数或者用类来包装线程对象。" class="headerlink" title="Python中使用线程有两种方式：函数或者用类来包装线程对象。"></a>Python中使用线程有两种方式：函数或者用类来包装线程对象。</h4><h4 id="下面我以两个简单的示例来解释这两种方式："><a href="#下面我以两个简单的示例来解释这两种方式：" class="headerlink" title="下面我以两个简单的示例来解释这两种方式："></a>下面我以两个简单的示例来解释这两种方式：</h4><p>模拟用多线程下载文件，用的是函数的方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> time, sleep</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download</span><span class="params">(filename)</span>:</span></span><br><span class="line">    print(<span class="string">'开始下载%s...'</span> % filename)</span><br><span class="line">    time_to_download = randint(<span class="number">5</span>, <span class="number">10</span>)</span><br><span class="line">    sleep(time_to_download)</span><br><span class="line">    print(<span class="string">'%s下载完成! 用时%d秒'</span> % (filename, time_to_download))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    start = time()  <span class="comment"># 开始的时间点</span></span><br><span class="line">    t1 = Thread(target=download, args=(<span class="string">'A文件'</span>,))   <span class="comment"># 注意字符串后面的逗号，表示传入的是元组   </span></span><br><span class="line">    t1.start()      <span class="comment"># 启动下载A文件的线程</span></span><br><span class="line">    t2 = Thread(target=download, args=(<span class="string">'B文件'</span>,))</span><br><span class="line">    t2.start()</span><br><span class="line">    t1.join()      <span class="comment"># 等待执行结束</span></span><br><span class="line">    t2.join()      <span class="comment"># 等待执行结束</span></span><br><span class="line">    end = time()    <span class="comment"># 结束的时间点</span></span><br><span class="line">    print(<span class="string">'总共耗费了%.5f秒'</span> % (end - start))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>用多线程写的赛车动画，五个线程控制五辆由色块表示的小车移动，这样小车可以同时移动，而不是一辆一辆依次移动</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pygame</span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> uniform, randint</span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x, y)</span>:</span></span><br><span class="line">        self._color = [randint(<span class="number">0</span>, <span class="number">255</span>), randint(<span class="number">0</span>, <span class="number">255</span>), randint(<span class="number">0</span>, <span class="number">255</span>)]</span><br><span class="line">        self._x = x</span><br><span class="line">        self._y = y</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">x</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._x</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move</span><span class="params">(self)</span>:</span></span><br><span class="line">        self._x += uniform(<span class="number">0.5</span>, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">head</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._x + <span class="number">20</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">draw</span><span class="params">(self, screen)</span>:</span></span><br><span class="line">        pygame.draw.rect(screen, self._color, (self._x, self._y, <span class="number">20</span>, <span class="number">20</span>), <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self, screen)</span>:</span></span><br><span class="line">        self.move()</span><br><span class="line">        self.draw(screen)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mythread</span><span class="params">(Thread)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, car, screen)</span>:</span></span><br><span class="line">        super().__init__()</span><br><span class="line">        self._car = car</span><br><span class="line">        self._screen = screen</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></span><br><span class="line">        Car.move(self._car)</span><br><span class="line">        Car.draw(self._car, self._screen)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    pygame.init()</span><br><span class="line"></span><br><span class="line">    screen = pygame.display.set_mode([<span class="number">600</span>, <span class="number">500</span>])</span><br><span class="line">    pygame.display.set_caption(<span class="string">'赛车游戏'</span>)</span><br><span class="line">    screen.fill([<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>])</span><br><span class="line">    pygame.draw.line(screen, [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], (<span class="number">37</span>, <span class="number">0</span>), (<span class="number">37</span>, <span class="number">500</span>), <span class="number">5</span>)</span><br><span class="line">    pygame.draw.line(screen, [<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>], (<span class="number">580</span>, <span class="number">0</span>), (<span class="number">580</span>, <span class="number">500</span>), <span class="number">5</span>)</span><br><span class="line">    cars = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):</span><br><span class="line">        car = Car(<span class="number">20</span>, <span class="number">50</span>+<span class="number">100</span>*i)</span><br><span class="line">        cars.append(car)</span><br><span class="line">    <span class="keyword">for</span> car <span class="keyword">in</span> cars:</span><br><span class="line">        car.draw(screen)</span><br><span class="line">    pygame.display.flip()</span><br><span class="line">    running = <span class="keyword">True</span></span><br><span class="line">    gameover = <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">game_over</span><span class="params">(c1)</span>:</span></span><br><span class="line">        <span class="keyword">nonlocal</span> gameover</span><br><span class="line">        <span class="keyword">if</span> c1.head() &gt; <span class="number">580</span>:</span><br><span class="line">            gameover = <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">refresh</span><span class="params">()</span>:</span></span><br><span class="line">        screen.fill((<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>))</span><br><span class="line">        pygame.draw.line(screen, [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], (<span class="number">37</span>, <span class="number">0</span>), (<span class="number">37</span>, <span class="number">500</span>), <span class="number">5</span>)</span><br><span class="line">        pygame.draw.line(screen, [<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>], (<span class="number">580</span>, <span class="number">0</span>), (<span class="number">580</span>, <span class="number">500</span>), <span class="number">5</span>)</span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> cars:</span><br><span class="line">            Mythread(_, screen).start()</span><br><span class="line">        pygame.display.flip()</span><br><span class="line">    <span class="keyword">while</span> running:</span><br><span class="line">        <span class="keyword">for</span> event <span class="keyword">in</span> pygame.event.get():</span><br><span class="line">            <span class="keyword">if</span> event.type == pygame.QUIT:</span><br><span class="line">                running = <span class="keyword">False</span></span><br><span class="line">            <span class="keyword">if</span> event.type == pygame.KEYDOWN:</span><br><span class="line">                <span class="keyword">while</span> <span class="keyword">not</span> gameover:</span><br><span class="line">                    <span class="keyword">for</span> car <span class="keyword">in</span> cars:</span><br><span class="line">                        game_over(car)</span><br><span class="line">                    refresh()</span><br><span class="line">            pygame.display.flip()</span><br><span class="line"></span><br><span class="line">    pygame.quit()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/24/Pyhon字符串/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JM68">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JM68_Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/24/Pyhon字符串/" itemprop="url">Python字符串</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-24T08:12:46+08:00">
+                2018-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Python中的字符串类型的常用方法"><a href="#Python中的字符串类型的常用方法" class="headerlink" title="Python中的字符串类型的常用方法"></a>Python中的字符串类型的常用方法</h2><h3 id="在字符串中查找索引"><a href="#在字符串中查找索引" class="headerlink" title="在字符串中查找索引"></a>在字符串中查找索引</h3><p>方法包括： .index()、.rindex、.find()、.rfind()   方法中可以规定查找的具体起点索引位置，终点索引位置<br>find 与 rfind 的区别一个从左向右找，一个从右到左找，它们都只返回第一个查找到的位置 同理 index与rindex<br>find 与 index 的区别在于，如果在字符串中没有查找到目标字符串，find将会返回整型 -1 而index将报出ValueError的错误</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">text = <span class="string">'abba'</span></span><br><span class="line">print(text.index(<span class="string">'a'</span>))   </span><br><span class="line">print(text.rindex(<span class="string">'a'</span>))</span><br><span class="line">print(text.index(<span class="string">'a'</span>,<span class="number">1</span>))</span><br><span class="line">print(text.find(<span class="string">'a'</span>))</span><br><span class="line">print(text.find(<span class="string">'a'</span>,<span class="number">1</span>))</span><br><span class="line">print(text.rfind(<span class="string">'a'</span>))</span><br><span class="line">print(text.find(<span class="string">'c'</span>))</span><br><span class="line">print(text.index(<span class="string">'c'</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>0
+3
+3
+0
+3
+3
+-1
+
+
+
+---------------------------------------------------------------------------
+
+ValueError                                Traceback (most recent call last)
+
+&lt;ipython-input-4-4bb2a984ce9c&gt; in &lt;module&gt;()
+      7 print(text.rfind(&apos;a&apos;))
+      8 print(text.find(&apos;c&apos;))
+----&gt; 9 print(text.index(&apos;c&apos;))
+
+
+ValueError: substring not found
+</code></pre><h3 id="在字符串中插入字符串"><a href="#在字符串中插入字符串" class="headerlink" title="在字符串中插入字符串"></a>在字符串中插入字符串</h3><p>.join() 插入间隔字符串，将字符串一一隔开<br>.format()   在字符串中加入{}然后用.format( )在括号内依次插入<br>在字符串中加入%s 代表字符串 %d 代表数字 后用 % 连接你要插入的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">' '</span>    <span class="comment"># 包含一个空格的字符串</span></span><br><span class="line">b = <span class="string">'面朝大海春暖花开'</span></span><br><span class="line">print(b)</span><br><span class="line">print(a.join(b))</span><br><span class="line">print(<span class="string">'挑水&#123;&#125;柴周&#123;&#125;世界'</span>.format(<span class="string">'劈'</span>,<span class="string">'游'</span>))</span><br><span class="line">print(<span class="string">'%d个和尚挑%s,%d个和尚%s'</span> % (<span class="number">1</span>,<span class="string">'水喝'</span>,<span class="number">2</span>,<span class="string">'没水喝'</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>面朝大海春暖花开
+面 朝 大 海 春 暖 花 开
+挑水劈柴周游世界
+1个和尚挑水喝,2个和尚没水喝
+</code></pre><h3 id="在字符串中判断（此处不谈正则表达式）"><a href="#在字符串中判断（此处不谈正则表达式）" class="headerlink" title="在字符串中判断（此处不谈正则表达式）"></a>在字符串中判断（此处不谈正则表达式）</h3><p>.isalnum()判断是否由字母与数字构成<br>.isalpha()判断是否由字母构成<br>.isdigit()判断是否是数字构成<br>.islower()判断是否全是小写字母<br>.isupper()判断是否全是大写字母<br>.endswith()以什么结束<br>.startswith()以什么开始</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'abc123'</span>.isalnum()) <span class="comment"># 判断是否由字母与数字构成</span></span><br><span class="line">print(<span class="string">'abc123'</span>.isalpha()) <span class="comment"># 判断是否由字母构成</span></span><br><span class="line">print(<span class="string">'123'</span>.isdigit()) <span class="comment"># 判断是否是数字构成</span></span><br><span class="line">print(<span class="string">'abc'</span>.islower()) <span class="comment"># 判断是否全是小写字母</span></span><br><span class="line">print(<span class="string">'abc'</span>.isupper()) <span class="comment"># 判断是否全是大写字母</span></span><br><span class="line">print(<span class="string">'abc'</span>.endswith(<span class="string">'c'</span>)) <span class="comment"># 以什么结束</span></span><br><span class="line">print(<span class="string">'abc'</span>.startswith(<span class="string">'a'</span>)) <span class="comment"># 以什么开始</span></span><br></pre></td></tr></table></figure>
+<pre><code>True
+False
+True
+True
+False
+True
+True
+</code></pre><h3 id="将字符串拆分成列表"><a href="#将字符串拆分成列表" class="headerlink" title="将字符串拆分成列表"></a>将字符串拆分成列表</h3><p>.split() </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">text = <span class="string">'姓名，年龄，学历，简历'</span>  <span class="comment"># 注意我用的汉语输入法中的逗号</span></span><br><span class="line">print(text.split(<span class="string">'，'</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;姓名&apos;, &apos;年龄&apos;, &apos;学历&apos;, &apos;简历&apos;]
+</code></pre><h3 id="将字符串中的字符替换"><a href="#将字符串中的字符替换" class="headerlink" title="将字符串中的字符替换"></a>将字符串中的字符替换</h3><p>.replace()  将原来的字符串替换为新的字符串<br>.capitalize() 将原来的字符串首字母进行大写处理 同理 .title()<br>.upper() 全部转换为大写字母<br>.lower() 全部转换为小写字母</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'I want to work'</span>.replace(<span class="string">'work'</span>,<span class="string">'sleep'</span>))</span><br><span class="line">print(<span class="string">'i want to work'</span>.capitalize())</span><br><span class="line">print(<span class="string">'i want to work'</span>.upper())</span><br><span class="line">print(<span class="string">'I wAnt to work'</span>.lower())</span><br></pre></td></tr></table></figure>
+<pre><code>I want to sleep
+I want to work
+I WANT TO WORK
+i want to work
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/22/git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -771,7 +1610,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -782,7 +1621,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -793,7 +1632,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
