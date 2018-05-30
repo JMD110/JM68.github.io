@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[HTTP中POST、GET、PUT、DELETE的区别]]></title>
+    <url>%2F2018%2F05%2F27%2Fhttp%E8%AF%B7%E6%B1%82%2F</url>
+    <content type="text"><![CDATA[URL是什么:统一资源定位符是对可以从互联网上得到的资源的位置和访问方法的一种简洁的表示，是互联网上标准资源的地址。互联网上的每个文件都有一个唯一的URL，它包含的信息指出文件的位置以及浏览器应该怎么处理它。 HTTP定义了与服务器交互的不同的方法，最基本的是POST、GET、PUT、DELETE，而URL描述了一个网络上资源，而post、delete、get、put就是对这个资源进行增、删、查、改的操作! GET请求会向数据库发送索取数据的请求来获取数据，该请求就像数据库的 select 操作一样，只用来查询数据，不会增加、修改数据，不会影响资源的内容。 PUT请求是向服务器端发送数据的，从而改变内容，该请求就像数据库的 update 操作一样，用来修改数据的内容，但是不会增加数据的条数。(在Restful中PATCH请求同样是修改数据,不同的是,PUT类似于将某条(某行)数据全部提出进行修改后全部提交,而PATCH类似于将某列或某几列的内容修改后提交,该请求是一个局部更新，后端仅更新接收到的字段。如果进行部分修改显然PATCH是更优的选择!) POST请求同PUT请求类似，都是向服务器端发送数据的，但是该请求会改变数据的条数，就像数据库的 insert 操作一样，会创建新的内容。几乎目前所有的提交操作都是用POST请求的。 DELETE请求顾名思义，就是用来删除某一个资源的，该请求就像数据库的 delete 操作。]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Javascript基础]]></title>
+    <url>%2F2018%2F05%2F27%2FJavascript%E5%9F%BA%E7%A1%80%2F</url>
+    <content type="text"><![CDATA[Javascript中有六种数据类型：字符串 string数字 number布尔 boolean对象 object （包括数组new array、函数function()、时间对象new Data()）空 null未定义 undefined Javascript:变量命名的规则(见名知义，驼峰命名法)1、数字、下划线、字母、$,组成，数字不能放在开头2、不能与关键字、保留字重合3、大小写敏感 Javascript注释：//表示单行注释/ /表示多行注释 Javascript运算符：number类型类似于Python中的浮点型float,如果要定义为整数类型，需用：parseInt()没有整除运算 //是注释理解++，–：var a = 3 var b = 3 var c = a++(先把a的值赋给了c，然后在给a+1，这样，c现在=3，而a=4) var c = ++b(先给b+1再赋值给c，所以c,b现在都=4)===(严格等)： 绝对等于（值和类型均相等）a = 5 那么a == ‘5’是true!==(严格不等)： 不绝对等于（值和类型有一个不相等，或两个都不相等）a = 5 那么a!== 5 是ture&amp;&amp;: 短路与 a&gt;0 &amp;&amp; a&lt;10 一个不成立就不再往下执行&amp;： 逻辑与 and||: 短路或 a10 一个成立就不再往下执行|： 逻辑或 or!: 类似于not a = ture !a就代表false a = 100 !!a就代表ture其他的与python相同switch 中的 case 是不带隐藏转换的 a = 5, switch(a){case’5’: ;case 5: ; default: ;}只执行后面case 5 Javascript 中的条件语句：if(){}; if(){}else{}; if(){}else if{}else{}; switch(){case: case: default:} Javascript 中的循环：for: for(){}; (){} 中间绝对不能写 ‘;’while: while(){}; (){} 中间绝对不能写 ‘;’do while: do{}while(); 这样无论如何至少会执行一次 Javascript 中生成随机数：Math.random() * ( max - min + 1) + min 表示生成[min,max]的随机数 Javascript 中定义函数：function foo(参数){} 多个参数用逗号隔开 参数也可以赋默认值 function foo(a=10, b=20){return a+b;} 返回30 Javascript 中json格式，创建对象的语法 创建对象的字面量方法：第一种：var stu1 = { name:’小张’ , age: 18, study: function(courseName){ window.alert(this.name+’正在学习’+courseName) }, watchAv: function(){ if (this.age &gt;= 18){ window.alert(this.name+’正在看东京冷’) }else{ window.alert(this.name+’只有看熊出没’) } } }; stu1.study(‘语文’); stu1.watchAv(); 第二种：var stu1 = new object(); new object()是一个函数stu1.name = ‘小张’;stu1.age = 18;stu1.study = function(courseNmae){ } 创建对象的构造器方法 创建同种类型的多个对象： 第一种：function Student(name, age){ this.name = name; this.age = age; this.study = function(courseName){ window.alert(this.name+’正在学习’+courseName) }; this.watch = function(){ if (this.age &gt;= 18){ window.alert(this.name+’正在看东京冷’) } else { window.alert(this.name+’只有看熊出没’) } };}var stu1 = new Student(‘小张’,18);var stu2 = new Student(‘jmd’,25);stu1.study(‘语文’);stu1.watchAv(); 第二种：可能更好function Student(name, age){ this.name = name; this.age = age; }; Student.prototye.study = function(courseName){ window.alert(this.name+’正在学习’+courseName); }; Student.propotype.watch = function(){ if (this.age &gt;= 18){ window.alert(this.name+’正在看东京冷’) } else { window.alert(this.name+’只有看熊出没’) } };};var stu1 = new Student(‘小张’,18);var stu2 = new Student(‘jmd’,25);stu1.study(‘语文’);stu1.watchAv(); 总结：在Javascript中函数是第一位（做什么都需要借助函数来完成创建）; Javascript 中自带的类：方法就是发给类的消息window window.alert(‘’) var a = window.prompt(‘输入：’); window.alert(a) 弹出输入的内容 window.comfirm(‘’) 调确认框 window.print()调打印机 window.close() 一般不用，有浏览器兼容问题 window.open(‘url’,’name’); 一般浏览器会自动屏蔽弹窗 重要的：window.location.href= window.setTimeout(函数，时间) 时间以毫秒为单位]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python的random]]></title>
+    <url>%2F2018%2F05%2F26%2FPython_Random%2F</url>
+    <content type="text"><![CDATA[python中random模块可以生成随机数或随机顺序或随机选择我们常用的有random, randint, randrange, shuffle, sample, uniform，choicerandom: 随机生成 [0,1) 的实数123import randomx = random.random()print(x) 0.9065644990934733 randint: 随机生成 [min,max] 范围内的整数123import randomx = random.randint(1, 100)print(x) 21 randrange:随机生成[start, stop,step]范围内的整数 设置step可以规定步长1234import randomfor _ in range(10): # 通过循环十次看看随机生成的效果 x = random.randrange(1, 100, 2)# 随机生成一到一百的奇数 print(x, end=' ') # 通过设置end让结果打印在一排 53 27 1 51 31 65 13 15 87 93 uniform：随机生成[min,max]范围内的浮点数123import randomx = random.uniform(1,10)print(x) 9.11079652346942 shuffle: 将列表的顺序打乱（列表按随机排序）1234import randomlist1 = [1,2,3,4,5,6,7,8,9,10]random.shuffle(list1) # 打乱列表顺序print(list1) # 原有列表已经被随机排序 [1, 6, 3, 7, 8, 5, 9, 4, 10, 2] sample:从容器中随机选出指定数量的元素，容器可以是列表、字符串、元组12345678910111213import randomlist1 = [1,2,3,4,5,6,7,8,9,10]string1 = 'abcdefghijk'tuple1 = (1,2,3,4,5,6,7,8,9,10)x = random.sample(list1,3) # 随机在list1中选取3个元素y = random.sample(string1,3) # 随机在字符串中选取三个元素z = random.sample(tuple1,2) # 随机在元组中选取两个元素print(x)print(y)print(z)print(list1) # sample并不改变原有容器print(string1)print(tuple1) [6, 4, 7] [&apos;h&apos;, &apos;g&apos;, &apos;k&apos;] [1, 6] [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] abcdefghijk (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) choice:从容器中随机选取一个元素，容器可以是列表、字符串、元组12345678910111213import randomlist1 = [1,2,3,4,5,6,7,8,9,10]string1 = 'abcdefghijk'tuple1 = (1,2,3,4,5,6,7,8,9,10)x = random.choice(list1) # 随机在list1中选取元素y = random.choice(string1) # 随机在字符串中选取元素z = random.choice(tuple1) # 随机在元组中选取元素print(x)print(y)print(z)print(list1) # choice并不改变原有容器print(string1)print(tuple1) 1 c 8 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] abcdefghijk (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[正则表达式]]></title>
     <url>%2F2018%2F05%2F26%2F%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[正则表达式又称规则表达式，英语：Regular Expression，在代码中常简写为regex\regexp\RE,作为计算机科学的一个概念，正则表达式通常被用来检索、替换那些符合某个规则的文本，是对字符串进行操作的一种逻辑公式。1、可以使用正则表达式来识别文档中的特定文本，完全删除该文本或者用其他文本替换它。2、 基于模式匹配从字符串中提取子字符串。3、可以查找文档内或输入域内特定的文本。 符号 解释 示例 说明 . 匹配任意字符 b.t 可以匹配bat / but / b#t / b1t等 \w 匹配字母/数字/下划线 b\wt 可以匹配bat / b1t / b_t等但不能匹配b#t \s 匹配空白字符（包括\r、\n、\t等） love\syou 可以匹配love you \d 匹配数字 \d\d 可以匹配01 / 23 / 99等 \b 匹配单词的边界 \bThe\b 可以匹配The ^ 匹配字符串的开始 ^The 可以匹配The开头的字符串 $ 匹配字符串的结束 .exe$ 可以匹配.exe结尾的字符串 \W 匹配非字母/数字/下划线 b\Wt 可以匹配b#t / b@t等,但不能匹配but / b1t / b_t等 \S 匹配非空白字符 love\Syou 可以匹配love#you等,但不能匹配love you \D 匹配非数字 \d\D 可以匹配9a / 3# / 0F等 \B 匹配非单词边界 \Bio\B [] 匹配来自字符集的任意单一字符 [aeiou] 可以匹配任一元音字母字符 [^] 匹配不在字符集中的任意单一字符 [^aeiou] 可以匹配任一非元音字母字符 * 匹配0次或多次 \w* + 匹配1次或多次 \w+ ? 匹配0次或1次 \w? {N} 匹配N次 \w{3} 可以匹配aaa,abc,cba {M,} 匹配至少M次 \w{3,} 可以匹配aaaaa,abduns {M,N} 匹配至少M次至多N次 \w{3,6} \ 分支 foo\ bar 可以匹配foo或者bar (?#) 注释 (exp) 匹配exp并捕获到自动命名的组中 (?exp) 匹配exp并捕获到名为name的组中 (?:exp) 匹配exp但是不捕获匹配的文本 (?=exp) 匹配exp前面的位置 \b\w+(?=ing) 可以匹配I’m dancing中的danc (?&lt;=exp) 匹配exp后面的位置 (?&lt;=\bdanc)\w+\b 可以匹配I love dancing and reading中的第一个ing (?!exp) 匹配后面不是exp的位置 *? 重复任意次，但尽可能少重复 +? 重复1次或多次，但尽可能少重复 ?? 重复0次或1次，但尽可能少重复 {M,N}? 重复M到N次，但尽可能少重复 {M,}? 重复M次以上，但尽可能少重复]]></content>

@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="python中random模块可以生成随机数或随机顺序或随机选择我们常用的有random, randint, randrange, shuffle, sample, uniform，choicerandom: 随机生成 [0,1) 的实数123import randomx = random.random()print(x) 0.9065644990934733 randint: 随机生成 [min">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python的random">
+<meta property="og:url" content="http://yoursite.com/2018/05/26/Python_Random/index.html">
+<meta property="og:site_name" content="JM68_Blog">
+<meta property="og:description" content="python中random模块可以生成随机数或随机顺序或随机选择我们常用的有random, randint, randrange, shuffle, sample, uniform，choicerandom: 随机生成 [0,1) 的实数123import randomx = random.random()print(x) 0.9065644990934733 randint: 随机生成 [min">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-30T12:31:16.381Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python的random">
+<meta name="twitter:description" content="python中random模块可以生成随机数或随机顺序或随机选择我们常用的有random, randint, randrange, shuffle, sample, uniform，choicerandom: 随机生成 [0,1) 的实数123import randomx = random.random()print(x) 0.9065644990934733 randint: 随机生成 [min">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/26/Python_Random/"/>
+
+
+
+
+
+  <title>Python的random | JM68_Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JM68_Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/26/Python_Random/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JM68">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JM68_Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python的random</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-26T20:12:46+08:00">
+                2018-05-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="python中random模块可以生成随机数或随机顺序或随机选择"><a href="#python中random模块可以生成随机数或随机顺序或随机选择" class="headerlink" title="python中random模块可以生成随机数或随机顺序或随机选择"></a>python中random模块可以生成随机数或随机顺序或随机选择</h3><h3 id="我们常用的有random-randint-randrange-shuffle-sample-uniform，choice"><a href="#我们常用的有random-randint-randrange-shuffle-sample-uniform，choice" class="headerlink" title="我们常用的有random, randint, randrange, shuffle, sample, uniform，choice"></a>我们常用的有random, randint, randrange, shuffle, sample, uniform，choice</h3><h3 id="random-随机生成-0-1-的实数"><a href="#random-随机生成-0-1-的实数" class="headerlink" title="random: 随机生成 [0,1) 的实数"></a>random: 随机生成 [0,1) 的实数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">x = random.random()</span><br><span class="line">print(x)</span><br></pre></td></tr></table></figure>
+<pre><code>0.9065644990934733
+</code></pre><h3 id="randint-随机生成-min-max-范围内的整数"><a href="#randint-随机生成-min-max-范围内的整数" class="headerlink" title="randint: 随机生成 [min,max] 范围内的整数"></a>randint: 随机生成 [min,max] 范围内的整数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">x = random.randint(<span class="number">1</span>, <span class="number">100</span>)</span><br><span class="line">print(x)</span><br></pre></td></tr></table></figure>
+<pre><code>21
+</code></pre><h3 id="randrange-随机生成-start-stop-step-范围内的整数-设置step可以规定步长"><a href="#randrange-随机生成-start-stop-step-范围内的整数-设置step可以规定步长" class="headerlink" title="randrange:随机生成[start, stop,step]范围内的整数 设置step可以规定步长"></a>randrange:随机生成[start, stop,step]范围内的整数 设置step可以规定步长</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">10</span>): <span class="comment"># 通过循环十次看看随机生成的效果</span></span><br><span class="line">    x = random.randrange(<span class="number">1</span>, <span class="number">100</span>, <span class="number">2</span>)<span class="comment"># 随机生成一到一百的奇数</span></span><br><span class="line">    print(x, end=<span class="string">' '</span>) <span class="comment"># 通过设置end让结果打印在一排</span></span><br></pre></td></tr></table></figure>
+<pre><code>53 27 1 51 31 65 13 15 87 93 
+</code></pre><h3 id="uniform：随机生成-min-max-范围内的浮点数"><a href="#uniform：随机生成-min-max-范围内的浮点数" class="headerlink" title="uniform：随机生成[min,max]范围内的浮点数"></a>uniform：随机生成[min,max]范围内的浮点数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">x = random.uniform(<span class="number">1</span>,<span class="number">10</span>)</span><br><span class="line">print(x)</span><br></pre></td></tr></table></figure>
+<pre><code>9.11079652346942
+</code></pre><h3 id="shuffle-将列表的顺序打乱（列表按随机排序）"><a href="#shuffle-将列表的顺序打乱（列表按随机排序）" class="headerlink" title="shuffle: 将列表的顺序打乱（列表按随机排序）"></a>shuffle: 将列表的顺序打乱（列表按随机排序）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">list1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>]</span><br><span class="line">random.shuffle(list1) <span class="comment"># 打乱列表顺序</span></span><br><span class="line">print(list1) <span class="comment"># 原有列表已经被随机排序</span></span><br></pre></td></tr></table></figure>
+<pre><code>[1, 6, 3, 7, 8, 5, 9, 4, 10, 2]
+</code></pre><h3 id="sample-从容器中随机选出指定数量的元素，容器可以是列表、字符串、元组"><a href="#sample-从容器中随机选出指定数量的元素，容器可以是列表、字符串、元组" class="headerlink" title="sample:从容器中随机选出指定数量的元素，容器可以是列表、字符串、元组"></a>sample:从容器中随机选出指定数量的元素，容器可以是列表、字符串、元组</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">list1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>]</span><br><span class="line">string1 = <span class="string">'abcdefghijk'</span></span><br><span class="line">tuple1 = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>)</span><br><span class="line">x = random.sample(list1,<span class="number">3</span>) <span class="comment"># 随机在list1中选取3个元素</span></span><br><span class="line">y = random.sample(string1,<span class="number">3</span>) <span class="comment"># 随机在字符串中选取三个元素</span></span><br><span class="line">z = random.sample(tuple1,<span class="number">2</span>) <span class="comment"># 随机在元组中选取两个元素</span></span><br><span class="line">print(x)</span><br><span class="line">print(y)</span><br><span class="line">print(z)</span><br><span class="line">print(list1) <span class="comment"># sample并不改变原有容器</span></span><br><span class="line">print(string1)</span><br><span class="line">print(tuple1)</span><br></pre></td></tr></table></figure>
+<pre><code>[6, 4, 7]
+[&apos;h&apos;, &apos;g&apos;, &apos;k&apos;]
+[1, 6]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+abcdefghijk
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+</code></pre><h3 id="choice-从容器中随机选取一个元素，容器可以是列表、字符串、元组"><a href="#choice-从容器中随机选取一个元素，容器可以是列表、字符串、元组" class="headerlink" title="choice:从容器中随机选取一个元素，容器可以是列表、字符串、元组"></a>choice:从容器中随机选取一个元素，容器可以是列表、字符串、元组</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">list1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>]</span><br><span class="line">string1 = <span class="string">'abcdefghijk'</span></span><br><span class="line">tuple1 = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>)</span><br><span class="line">x = random.choice(list1) <span class="comment"># 随机在list1中选取元素</span></span><br><span class="line">y = random.choice(string1) <span class="comment"># 随机在字符串中选取元素</span></span><br><span class="line">z = random.choice(tuple1) <span class="comment"># 随机在元组中选取元素</span></span><br><span class="line">print(x)</span><br><span class="line">print(y)</span><br><span class="line">print(z)</span><br><span class="line">print(list1) <span class="comment"># choice并不改变原有容器</span></span><br><span class="line">print(string1)</span><br><span class="line">print(tuple1)</span><br></pre></td></tr></table></figure>
+<pre><code>1
+c
+8
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+abcdefghijk
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/26/正则表达式/" rel="next" title="正则表达式">
+                <i class="fa fa-chevron-left"></i> 正则表达式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/27/Javascript基础/" rel="prev" title="Javascript基础">
+                Javascript基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">JM68</p>
+              <p class="site-description motion-element" itemprop="description">面朝大海 春暖花开</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/JMD110" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:741096458@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#python中random模块可以生成随机数或随机顺序或随机选择"><span class="nav-number">1.</span> <span class="nav-text">python中random模块可以生成随机数或随机顺序或随机选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们常用的有random-randint-randrange-shuffle-sample-uniform，choice"><span class="nav-number">2.</span> <span class="nav-text">我们常用的有random, randint, randrange, shuffle, sample, uniform，choice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#random-随机生成-0-1-的实数"><span class="nav-number">3.</span> <span class="nav-text">random: 随机生成 [0,1) 的实数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#randint-随机生成-min-max-范围内的整数"><span class="nav-number">4.</span> <span class="nav-text">randint: 随机生成 [min,max] 范围内的整数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#randrange-随机生成-start-stop-step-范围内的整数-设置step可以规定步长"><span class="nav-number">5.</span> <span class="nav-text">randrange:随机生成[start, stop,step]范围内的整数 设置step可以规定步长</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#uniform：随机生成-min-max-范围内的浮点数"><span class="nav-number">6.</span> <span class="nav-text">uniform：随机生成[min,max]范围内的浮点数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shuffle-将列表的顺序打乱（列表按随机排序）"><span class="nav-number">7.</span> <span class="nav-text">shuffle: 将列表的顺序打乱（列表按随机排序）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sample-从容器中随机选出指定数量的元素，容器可以是列表、字符串、元组"><span class="nav-number">8.</span> <span class="nav-text">sample:从容器中随机选出指定数量的元素，容器可以是列表、字符串、元组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#choice-从容器中随机选取一个元素，容器可以是列表、字符串、元组"><span class="nav-number">9.</span> <span class="nav-text">choice:从容器中随机选取一个元素，容器可以是列表、字符串、元组</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JM68</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>
