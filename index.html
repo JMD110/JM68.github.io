@@ -522,19 +522,82 @@
 if(){}else{};
 if(){}else if{}else{};
 switch(){case: case:  default:}
-</code></pre><h4 id="Javascript-中的循环："><a href="#Javascript-中的循环：" class="headerlink" title="Javascript 中的循环："></a>Javascript 中的循环：</h4><p>for:         for(){};   (){} 中间绝对不能写  ‘;’<br>while:       while(){}; (){} 中间绝对不能写  ‘;’<br>do while:    do{}while();  这样无论如何至少会执行一次</p>
-<h4 id="Javascript-中生成随机数："><a href="#Javascript-中生成随机数：" class="headerlink" title="Javascript 中生成随机数："></a>Javascript 中生成随机数：</h4><p>Math.random() * ( max - min + 1) + min 表示生成[min,max]的随机数</p>
-<h4 id="Javascript-中定义函数："><a href="#Javascript-中定义函数：" class="headerlink" title="Javascript 中定义函数："></a>Javascript 中定义函数：</h4><p>function foo(参数){}  多个参数用逗号隔开 参数也可以赋默认值<br>                        function foo(a=10, b=20){return a+b;} 返回30</p>
-<p>Javascript 中json格式，创建对象的语法</p>
-<h3 id="创建对象的字面量方法："><a href="#创建对象的字面量方法：" class="headerlink" title="创建对象的字面量方法："></a>创建对象的字面量方法：</h3><h4 id="第一种："><a href="#第一种：" class="headerlink" title="第一种："></a>第一种：</h4><p>var stu1 = {<br>                name:’小张’ ,<br>                age: 18,<br>                study: function(courseName){<br>                    window.alert(this.name+’正在学习’+courseName)<br>                },<br>                watchAv: function(){<br>                    if (this.age &gt;= 18){<br>                        window.alert(this.name+’正在看东京冷’)<br>                    }else{<br>                        window.alert(this.name+’只有看熊出没’)<br>                    }<br>                }<br>            };<br>            stu1.study(‘语文’);<br>            stu1.watchAv();</p>
-<h4 id="第二种："><a href="#第二种：" class="headerlink" title="第二种："></a>第二种：</h4><p>var stu1 = new object();     new object()是一个函数<br>stu1.name = ‘小张’;<br>stu1.age = 18;<br>stu1.study = function(courseNmae){</p>
-<p>}</p>
-<p>创建对象的构造器方法 创建同种类型的多个对象：</p>
-<h4 id="第一种：-1"><a href="#第一种：-1" class="headerlink" title="第一种："></a>第一种：</h4><p>function Student(name, age){<br>    this.name = name;<br>    this.age = age;<br>    this.study = function(courseName){<br>        window.alert(this.name+’正在学习’+courseName)<br>    };<br>    this.watch = function(){<br>                    if (this.age &gt;= 18){<br>                        window.alert(this.name+’正在看东京冷’)<br>                    } else {<br>                        window.alert(this.name+’只有看熊出没’)<br>                    }<br>                };<br>}<br>var stu1 = new Student(‘小张’,18);<br>var stu2 = new Student(‘jmd’,25);<br>stu1.study(‘语文’);<br>stu1.watchAv();</p>
-<h4 id="第二种：可能更好"><a href="#第二种：可能更好" class="headerlink" title="第二种：可能更好"></a>第二种：可能更好</h4><p>function Student(name, age){<br>    this.name = name;<br>    this.age = age;<br>    };<br>    Student.prototye.study = function(courseName){<br>        window.alert(this.name+’正在学习’+courseName);<br>    };<br>    Student.propotype.watch = function(){<br>                    if (this.age &gt;= 18){<br>                        window.alert(this.name+’正在看东京冷’)<br>                    } else {<br>                        window.alert(this.name+’只有看熊出没’)<br>                    }<br>                };<br>};<br>var stu1 = new Student(‘小张’,18);<br>var stu2 = new Student(‘jmd’,25);<br>stu1.study(‘语文’);<br>stu1.watchAv();</p>
-<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>在Javascript中函数是第一位（做什么都需要借助函数来完成创建）;</p>
-<h4 id="Javascript-中自带的类：方法就是发给类的消息"><a href="#Javascript-中自带的类：方法就是发给类的消息" class="headerlink" title="Javascript 中自带的类：方法就是发给类的消息"></a>Javascript 中自带的类：方法就是发给类的消息</h4><p>window    window.alert(‘’)<br>          var a = window.prompt(‘输入：’);  window.alert(a) 弹出输入的内容<br>          window.comfirm(‘’)              调确认框  window.print()调打印机<br>          window.close()                  一般不用，有浏览器兼容问题<br>          window.open(‘url’,’name’);     一般浏览器会自动屏蔽弹窗<br>          重要的：window.location.href=<br>                  window.setTimeout(函数，时间) 时间以毫秒为单位</p>
+</code></pre><h4 id="Javascript-中的循环："><a href="#Javascript-中的循环：" class="headerlink" title="Javascript 中的循环："></a>Javascript 中的循环：</h4><pre><code>for:         for(){};   (){} 中间绝对不能写  &apos;;&apos;
+while:   while(){}; (){} 中间绝对不能写  &apos;;&apos;
+do while:do{}while();  这样无论如何至少会执行一次
+</code></pre><h4 id="Javascript-中生成随机数："><a href="#Javascript-中生成随机数：" class="headerlink" title="Javascript 中生成随机数："></a>Javascript 中生成随机数：</h4><pre><code>Math.random() * ( max - min + 1) + min 表示生成[min,max]的随机数
+</code></pre><h4 id="Javascript-中定义函数："><a href="#Javascript-中定义函数：" class="headerlink" title="Javascript 中定义函数："></a>Javascript 中定义函数：</h4><pre><code>function foo(参数){}  多个参数用逗号隔开 参数也可以赋默认值
+                        function foo(a=10, b=20){return a+b;} 返回30
+</code></pre><p>Javascript 中json格式，创建对象的语法</p>
+<h3 id="创建对象的字面量方法："><a href="#创建对象的字面量方法：" class="headerlink" title="创建对象的字面量方法："></a>创建对象的字面量方法：</h3><h4 id="第一种："><a href="#第一种：" class="headerlink" title="第一种："></a>第一种：</h4><pre><code>var stu1 = {
+                name:&apos;小张&apos; ,
+                age: 18,
+                study: function(courseName){
+                    window.alert(this.name+&apos;正在学习&apos;+courseName)
+                },
+                watchAv: function(){
+                    if (this.age &gt;= 18){
+                        window.alert(this.name+&apos;正在看东京冷&apos;)
+                    }else{
+                        window.alert(this.name+&apos;只有看熊出没&apos;)
+                    }
+                }
+            };
+            stu1.study(&apos;语文&apos;);
+            stu1.watchAv();
+</code></pre><h4 id="第二种："><a href="#第二种：" class="headerlink" title="第二种："></a>第二种：</h4><pre><code>var stu1 = new object(); new object()是一个函数
+stu1.name = &apos;小张&apos;;
+stu1.age = 18;
+stu1.study = function(courseNmae){
 
+}
+</code></pre><p>创建对象的构造器方法 创建同种类型的多个对象：</p>
+<h4 id="第一种：-1"><a href="#第一种：-1" class="headerlink" title="第一种："></a>第一种：</h4><pre><code>function Student(name, age){
+    this.name = name;
+    this.age = age;
+    this.study = function(courseName){
+        window.alert(this.name+&apos;正在学习&apos;+courseName)
+    };
+    this.watch = function(){
+                    if (this.age &gt;= 18){
+                        window.alert(this.name+&apos;正在看东京冷&apos;)
+                    } else {
+                        window.alert(this.name+&apos;只有看熊出没&apos;)
+                    }
+                };
+}
+var stu1 = new Student(&apos;小张&apos;,18);
+var stu2 = new Student(&apos;jmd&apos;,25);
+stu1.study(&apos;语文&apos;);
+stu1.watchAv();
+</code></pre><h4 id="第二种：可能更好"><a href="#第二种：可能更好" class="headerlink" title="第二种：可能更好"></a>第二种：可能更好</h4><pre><code>function Student(name, age){
+    this.name = name;
+    this.age = age;
+    };
+    Student.prototye.study = function(courseName){
+        window.alert(this.name+&apos;正在学习&apos;+courseName);
+    };
+    Student.propotype.watch = function(){
+                    if (this.age &gt;= 18){
+                        window.alert(this.name+&apos;正在看东京冷&apos;)
+                    } else {
+                        window.alert(this.name+&apos;只有看熊出没&apos;)
+                    }
+                };
+};
+var stu1 = new Student(&apos;小张&apos;,18);
+var stu2 = new Student(&apos;jmd&apos;,25);
+stu1.study(&apos;语文&apos;);
+stu1.watchAv();
+</code></pre><h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>在Javascript中函数是第一位（做什么都需要借助函数来完成创建）;</p>
+<h4 id="Javascript-中自带的类：方法就是发给类的消息"><a href="#Javascript-中自带的类：方法就是发给类的消息" class="headerlink" title="Javascript 中自带的类：方法就是发给类的消息"></a>Javascript 中自带的类：方法就是发给类的消息</h4><pre><code>windowwindow.alert(&apos;&apos;)  
+          var a = window.prompt(&apos;输入：&apos;);  window.alert(a) 弹出输入的内容
+          window.comfirm(&apos;&apos;)  调确认框  window.print()调打印机 
+          window.close()                  一般不用，有浏览器兼容问题
+          window.open(&apos;url&apos;,&apos;name&apos;); 一般浏览器会自动屏蔽弹窗
+          重要的：window.location.href=
+                  window.setTimeout(函数，时间) 时间以毫秒为单位
+</code></pre>
           
         
       
